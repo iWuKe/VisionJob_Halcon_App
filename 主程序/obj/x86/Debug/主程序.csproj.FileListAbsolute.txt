@@ -1,0 +1,6 @@
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\bin\Debug\VisionJob.exe
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\bin\Debug\VisionJob.pdb
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\obj\x86\Debug\VisionJob.exe
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\obj\x86\Debug\VisionJob.pdb
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\obj\x86\Debug\shikii.VisionJob.Res.resources
+C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\主程序\obj\x86\Debug\主程序.csproj.GenerateResource.Cache
