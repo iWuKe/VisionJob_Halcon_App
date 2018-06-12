@@ -42,20 +42,82 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="External\CodeEngine.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Res.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Res.resx</DependentUpon>
     </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_1.Designer.cs">
+      <DependentUpon>Dsp_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_2.Designer.cs">
+      <DependentUpon>Dsp_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_3.Designer.cs">
+      <DependentUpon>Dsp_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_4.Designer.cs">
+      <DependentUpon>Dsp_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_6.Designer.cs">
+      <DependentUpon>Dsp_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_9.Designer.cs">
+      <DependentUpon>Dsp_9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_Base.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_Base.Designer.cs">
+      <DependentUpon>Dsp_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="显示窗口布局\DspWndLayout.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Res.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_1.resx">
+      <DependentUpon>Dsp_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_2.resx">
+      <DependentUpon>Dsp_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_3.resx">
+      <DependentUpon>Dsp_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_4.resx">
+      <DependentUpon>Dsp_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_6.resx">
+      <DependentUpon>Dsp_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_9.resx">
+      <DependentUpon>Dsp_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_Base.resx">
+      <DependentUpon>Dsp_Base.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -5,10 +5,9 @@ using System.Windows.Forms;
 
 namespace shikii.VisionJob
 {
-    public partial class MainForm : Form
+    public partial class MainForm : dotNetLab.Forms.ModernPage
     {
 
 
-       
     }
 }
