@@ -1,4 +1,0 @@
-C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\测试用_WinForm窗体\bin\Debug\VisionTest.Form.exe
-C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\测试用_WinForm窗体\bin\Debug\VisionTest.Form.pdb
-C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\测试用_WinForm窗体\obj\x86\Debug\VisionTest.Form.exe
-C:\Users\shikii\Desktop\新建文件夹 (2)\视觉项目集\测试用_WinForm窗体\obj\x86\Debug\VisionTest.Form.pdb
