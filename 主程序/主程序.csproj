@@ -58,6 +58,20 @@
       <LastGenOutput>Res.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
+      <Project>{1FBA2CBC-8701-471A-A78F-AEC1119A5962}</Project>
+      <Name>AppCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shikii_New_App_Framework\数据中心\DBManager.csproj">
+      <Project>{203DBCC1-7FE8-489F-9204-0D01F6CA0A18}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shikii_New_App_Framework\界面\dotNetLab\dotNetLab.csproj">
+      <Project>{BC982388-B669-48CF-8F9A-A9DAC94BFFFD}</Project>
+      <Name>dotNetLab</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
