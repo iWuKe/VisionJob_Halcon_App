@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using dotNetLab.Common;
 namespace shikii.VisionJob
 {
    public class App
@@ -9,11 +10,9 @@ namespace shikii.VisionJob
        [STAThread]
        static void Main()
        {
-
-           Application.EnableVisualStyles();
-           Application.SetCompatibleTextRenderingDefault(false);
+           WinFormApp.BegineInvokeApp();
            DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
-           Application.Run(new MainForm());
+           WinFormApp.EndInvokeApp(new MainForm());
        }
     }
 }
