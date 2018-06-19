@@ -4,25 +4,30 @@ using System.Text;
 using System.Windows.Forms;
 using dotNetLab.Common.ModernUI;
 using dotNetLab.Common;
+using System.Threading;
 
 namespace shikii.VisionJob
 {
-    public partial class MainForm : dotNetLab.Forms.ModernPage
+    public partial class MainForm : dotNetLab.Common.ModernUI.PageBase
     {
-        private dotNetLab.Widgets.MobileListBox mobileListBox1;
+        private Button button1;
+        public dotNetLab.Widgets.MobileListBox mobileListBox1;
 
         protected override void prepareCtrls()
         {
             base.prepareCtrls();
             InitializeComponent();
-            mobileListBox1.AppendLog("hahahsdffffffffffffffffffffffffffffffffffffffffffff");
-            mobileListBox1.AppendLog("jiji", true);
+           
+           
+
+            
 
         }
        
         private void InitializeComponent()
         {
             this.mobileListBox1 = new dotNetLab.Widgets.MobileListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mobileListBox1
@@ -46,14 +51,26 @@ namespace shikii.VisionJob
             this.mobileListBox1.Text = "mobileListBox1";
             this.mobileListBox1.UIElementBinders = null;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(600, 500);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mobileListBox1);
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.Controls.SetChildIndex(this.mobileListBox1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
 
         }
@@ -65,6 +82,18 @@ namespace shikii.VisionJob
             {
                 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Thread(() =>
+            {
+                //ConsolePipe.Info("hahahsdffffffffffffffffffffffffffffffffffffffffffff");
+                //ConsolePipe.Error("jiji");
+              
+
+            }
+            ).Start();
         }
     }
 }
