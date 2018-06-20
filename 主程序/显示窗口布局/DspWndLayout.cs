@@ -15,7 +15,17 @@ namespace dotNetLab
             public Dsp_Base dsp_Container;
             public Control[] dspWndArr;
             Type type_DspWnd = null;
-         
+            public Control[] DisplayWnds
+            {
+                get
+                {
+                    return dspWndArr;
+                }
+                set
+                {
+                    dspWndArr = value;
+                }
+            }
             protected virtual Control[] GetDisplayWndArr(int nHowDspWnds)
             {
                 dspWndArr = new Control[nHowDspWnds];
