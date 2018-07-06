@@ -1,1 +1,7 @@
 *.agdai
+/测试用_WinForm窗体/obj/x86/Debug/*.cache
+/测试用_控制台/obj/x86/Debug/*.cache
+/调试助手/obj/Debug/*.cache
+/主程序/obj/x86/Debug/*.cache
+/主程序外部接口/obj/Debug/*.cache
+/主程序/obj/x86/Debug/*.CopyComplete

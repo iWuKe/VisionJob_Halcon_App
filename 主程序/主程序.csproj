@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
@@ -45,11 +46,23 @@
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatternForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Res.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RetriveLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetriveLogForm.Designer.cs">
+      <DependentUpon>RetriveLogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_1.cs">
       <SubType>UserControl</SubType>
@@ -94,10 +107,20 @@
       <DependentUpon>Dsp_Base.cs</DependentUpon>
     </Compile>
     <Compile Include="显示窗口布局\DspWndLayout.cs" />
+    <Compile Include="通讯\TCPFactoryServer.cs" />
+    <Compile Include="通讯\TCPNetConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatternForm.resx">
+      <DependentUpon>PatternForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Res.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_Base.resx">
       <DependentUpon>Dsp_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通讯\TCPNetConnectForm.resx">
+      <DependentUpon>TCPNetConnectForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
