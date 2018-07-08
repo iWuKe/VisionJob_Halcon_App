@@ -115,7 +115,7 @@ namespace shikii.VisionJob
             cmbx_CurrentProjectName.SelectedIndexChanged += (s, e) =>
             {
                 String strPath = String.Format("Projs\\{0}", cmbx_CurrentProjectName.Text);
-
+                //shikii 此处需要更改
                 // strPath =Path.Combine( Path.GetDirectoryName(Application.ExecutablePath),strPath);
               //  String strFilePath = Directory.GetFiles(strPath, "*.vpp")[0];
 
@@ -125,15 +125,10 @@ namespace shikii.VisionJob
 
             };
         }
-
-
-
         private void lnk_TrainPattern_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PatternForm frm = new PatternForm();
-          //  frm.PrepareToolBlockEditor(frm.editDapter, App.thisPowerSuite.ThisToolBlock, App.thisPowerSuite.ThisToolBlock, CompactDB.FetchValue("Current_Project"));
-            //Localize lc = new Localize();
-            //lc.LocalizeToolBlock(frm.editDapter.toolBox);
+          //shikii 此处需要修改
             frm.FormClosed += (s, ex) =>
             {
                 frm.Dispose();
