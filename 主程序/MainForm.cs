@@ -125,15 +125,8 @@ namespace shikii.VisionJob
         }
         private void btn_More_Click(object sender, EventArgs e)
         {
-            MenuForm frm = new MenuForm();
-            frm.EnableDialog = true;
-            frm.FormClosed += (s, ex) =>
-            {
-                frm.Dispose();
-            };
-            frm.Show();
+            AppManager.ShowFixedPage(typeof(MenuForm));
         }
-
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
