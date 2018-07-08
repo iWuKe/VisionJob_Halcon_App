@@ -27,7 +27,14 @@ namespace shikii.VisionJob
             cmbx_CurrentProjectName.Items.Clear();
             cmbx_DeleteProject.Items.Clear();
             cmbx_NewProjectBaseOnWhichProject.Items.Clear();
-            String[] strArr = Directory.GetDirectories("Projs");
+            String[] strArr = null;
+            if (!Directory.Exists("Projs"))
+                Directory.CreateDirectory("Projs");
+
+             strArr = Directory.GetDirectories("Projs");
+           
+           
+           
             for (int i = 0; i < strArr.Length; i++)
             {
                 strArr[i] = Path.GetFileNameWithoutExtension(strArr[i]);
