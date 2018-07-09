@@ -116,7 +116,6 @@ namespace shikii.VisionJob
         {
             AppManager.ShowFixedPage(typeof(MenuForm));
         }
-
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));

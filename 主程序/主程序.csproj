@@ -47,12 +47,8 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="External\CodeEngine.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MenuForm.cs" />
     <Compile Include="PatternForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,9 +108,7 @@
     </Compile>
     <Compile Include="显示窗口布局\DspWndLayout.cs" />
     <Compile Include="通讯\TCPFactoryServer.cs" />
-    <Compile Include="通讯\TCPNetConnectForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="通讯\TCPNetConnectForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
