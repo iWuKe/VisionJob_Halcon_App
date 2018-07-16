@@ -30,7 +30,7 @@ namespace shikii.VisionJob
         //    public bool isEmpty = true;
 
         //}
-      //  Canvas cnv;
+        //  Canvas cnv;
 
         protected override void prepareData()
         {
@@ -85,8 +85,8 @@ namespace shikii.VisionJob
             }
         }
       
-
-        void AutoSaveClearImage(Bitmap bmp)
+        //要使MenuForm 自动清理文本框正常显示请启用下列代码
+        protected void AutoSaveClearImage(Bitmap bmp)
         {
             //自动保存及清理图片
             //保存

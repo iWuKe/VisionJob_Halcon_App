@@ -33,8 +33,6 @@ namespace shikii.VisionJob
 
              strArr = Directory.GetDirectories("Projs");
            
-           
-           
             for (int i = 0; i < strArr.Length; i++)
             {
                 strArr[i] = Path.GetFileNameWithoutExtension(strArr[i]);
@@ -141,6 +139,22 @@ namespace shikii.VisionJob
             frm.Show();
 
         }
+        private void lnk_RetriveLogs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RetriveLogForm frm = new RetriveLogForm();
+            frm.Show();
+            frm.FormClosed += (s, ex) =>
+            {
+                frm.Dispose();
+            };
+        }
+
+        private void lnk_CommunicationConfig_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AppManager.ShowPage(typeof(TCPNetConnectForm));
+        }
+
+
         private dotNetLab.Widgets.Card card2;
         private LinkLabel lnk_TrainPattern;
         private dotNetLab.Widgets.TextBlock textBlock2;
@@ -160,16 +174,18 @@ namespace shikii.VisionJob
         private dotNetLab.Widgets.MobileTextBox mobileTextBox4;
         private LinkLabel lnk_RetriveLogs;
         private LinkLabel lnk_CommunicationConfig;
+        private LinkLabel lnk_ManualRun;
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
         private void InitializeComponent()
         {
-            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo2 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
+            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo3 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             this.mobileTextBox4 = new dotNetLab.Widgets.MobileTextBox();
             this.colorDecorator1 = new dotNetLab.Widgets.ColorDecorator();
             this.card2 = new dotNetLab.Widgets.Card();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lnk_RetriveLogs = new System.Windows.Forms.LinkLabel();
+            this.lnk_CommunicationConfig = new System.Windows.Forms.LinkLabel();
             this.lnk_TrainPattern = new System.Windows.Forms.LinkLabel();
             this.textBlock2 = new dotNetLab.Widgets.TextBlock();
             this.card1 = new dotNetLab.Widgets.Card();
@@ -183,7 +199,7 @@ namespace shikii.VisionJob
             this.textBlock4 = new dotNetLab.Widgets.TextBlock();
             this.textBlock3 = new dotNetLab.Widgets.TextBlock();
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
-            this.lnk_CommunicationConfig = new System.Windows.Forms.LinkLabel();
+            this.lnk_ManualRun = new System.Windows.Forms.LinkLabel();
             this.card2.SuspendLayout();
             this.card1.SuspendLayout();
             this.SuspendLayout();
@@ -192,16 +208,16 @@ namespace shikii.VisionJob
             // 
             this.mobileTextBox4.ActiveColor = System.Drawing.Color.Cyan;
             this.mobileTextBox4.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo2.DBEngineIndex = 0;
-            uiElementBinderInfo2.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo2.FieldName = "Val";
-            uiElementBinderInfo2.Filter = "Name=\'AutoClearTime\' ";
-            uiElementBinderInfo2.Ptr = null;
-            uiElementBinderInfo2.StoreInDB = true;
-            uiElementBinderInfo2.StoreIntoDBRealTime = true;
-            uiElementBinderInfo2.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo2.ThisControl = this.mobileTextBox4;
-            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo2;
+            uiElementBinderInfo3.DBEngineIndex = 0;
+            uiElementBinderInfo3.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo3.FieldName = "Val";
+            uiElementBinderInfo3.Filter = "Name=\'AutoClearTime\' ";
+            uiElementBinderInfo3.Ptr = null;
+            uiElementBinderInfo3.StoreInDB = true;
+            uiElementBinderInfo3.StoreIntoDBRealTime = true;
+            uiElementBinderInfo3.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo3.ThisControl = this.mobileTextBox4;
+            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo3;
             this.mobileTextBox4.DoubleValue = double.NaN;
             this.mobileTextBox4.EnableMobileRound = true;
             this.mobileTextBox4.EnableNullValue = false;
@@ -241,6 +257,7 @@ namespace shikii.VisionJob
             this.card2.BackColor = System.Drawing.Color.Transparent;
             this.card2.BorderColor = System.Drawing.Color.Gray;
             this.card2.BorderThickness = 0;
+            this.card2.Controls.Add(this.lnk_ManualRun);
             this.card2.Controls.Add(this.label2);
             this.card2.Controls.Add(this.label1);
             this.card2.Controls.Add(this.mobileTextBox4);
@@ -295,6 +312,17 @@ namespace shikii.VisionJob
             this.lnk_RetriveLogs.TabStop = true;
             this.lnk_RetriveLogs.Text = "查询往期日志";
             this.lnk_RetriveLogs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_RetriveLogs_LinkClicked);
+            // 
+            // lnk_CommunicationConfig
+            // 
+            this.lnk_CommunicationConfig.AutoSize = true;
+            this.lnk_CommunicationConfig.Location = new System.Drawing.Point(73, 46);
+            this.lnk_CommunicationConfig.Name = "lnk_CommunicationConfig";
+            this.lnk_CommunicationConfig.Size = new System.Drawing.Size(69, 20);
+            this.lnk_CommunicationConfig.TabIndex = 1;
+            this.lnk_CommunicationConfig.TabStop = true;
+            this.lnk_CommunicationConfig.Text = "通讯配置";
+            this.lnk_CommunicationConfig.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_CommunicationConfig_LinkClicked);
             // 
             // lnk_TrainPattern
             // 
@@ -610,21 +638,20 @@ namespace shikii.VisionJob
             this.textBlock1.Vertical = false;
             this.textBlock1.WhereReturn = ((byte)(0));
             // 
-            // lnk_CommunicationConfig
+            // lnk_ManualRun
             // 
-            this.lnk_CommunicationConfig.AutoSize = true;
-            this.lnk_CommunicationConfig.Location = new System.Drawing.Point(73, 46);
-            this.lnk_CommunicationConfig.Name = "lnk_CommunicationConfig";
-            this.lnk_CommunicationConfig.Size = new System.Drawing.Size(69, 20);
-            this.lnk_CommunicationConfig.TabIndex = 1;
-            this.lnk_CommunicationConfig.TabStop = true;
-            this.lnk_CommunicationConfig.Text = "通讯配置";
-            this.lnk_CommunicationConfig.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_CommunicationConfig_LinkClicked);
+            this.lnk_ManualRun.AutoSize = true;
+            this.lnk_ManualRun.Location = new System.Drawing.Point(73, 226);
+            this.lnk_ManualRun.Name = "lnk_ManualRun";
+            this.lnk_ManualRun.Size = new System.Drawing.Size(69, 20);
+            this.lnk_ManualRun.TabIndex = 5;
+            this.lnk_ManualRun.TabStop = true;
+            this.lnk_ManualRun.Text = "手动操作";
+            this.lnk_ManualRun.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_ManualRun_LinkClicked);
             // 
             // MenuForm
             // 
             this.ClientSize = new System.Drawing.Size(600, 500);
-            this.ClipboardText = "";
             this.Controls.Add(this.card2);
             this.Controls.Add(this.card1);
             this.Controls.Add(this.colorDecorator1);
@@ -645,20 +672,12 @@ namespace shikii.VisionJob
         {
 
         }
-
-        private void lnk_RetriveLogs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        
+        private void lnk_ManualRun_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RetriveLogForm frm = new RetriveLogForm();
-            frm.Show();
-            frm.FormClosed += (s, ex) =>
-            {
-                frm.Dispose();
-            };
+            AppManager.ShowPage(typeof(ManualForm));
         }
 
-        private void lnk_CommunicationConfig_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AppManager.ShowPage(typeof(TCPNetConnectForm));
-        }
+      
     }
 }
