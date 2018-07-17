@@ -44,14 +44,20 @@ namespace shikii.VisionJob
             dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo2 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo3 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo4 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
+            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo5 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
+            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo6 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
+            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo7 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo8 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo9 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
-            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo7 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
-            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo6 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
-            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo5 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             this.mobileTextBox3 = new dotNetLab.Widgets.MobileTextBox();
             this.mobileTextBox1 = new dotNetLab.Widgets.MobileTextBox();
             this.mobileTextBox2 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox4 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox5 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox6 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox7 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox8 = new dotNetLab.Widgets.MobileTextBox();
+            this.mobileTextBox9 = new dotNetLab.Widgets.MobileTextBox();
             this.textBlock9 = new dotNetLab.Widgets.TextBlock();
             this.textBlock8 = new dotNetLab.Widgets.TextBlock();
             this.textBlock7 = new dotNetLab.Widgets.TextBlock();
@@ -59,18 +65,12 @@ namespace shikii.VisionJob
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
             this.card2 = new dotNetLab.Widgets.Card();
             this.textBlock2 = new dotNetLab.Widgets.TextBlock();
+            this.textBlock11 = new dotNetLab.Widgets.TextBlock();
+            this.textBlock10 = new dotNetLab.Widgets.TextBlock();
+            this.textBlock6 = new dotNetLab.Widgets.TextBlock();
             this.textBlock3 = new dotNetLab.Widgets.TextBlock();
-            this.mobileTextBox4 = new dotNetLab.Widgets.MobileTextBox();
             this.textBlock4 = new dotNetLab.Widgets.TextBlock();
             this.textBlock5 = new dotNetLab.Widgets.TextBlock();
-            this.mobileTextBox5 = new dotNetLab.Widgets.MobileTextBox();
-            this.mobileTextBox6 = new dotNetLab.Widgets.MobileTextBox();
-            this.mobileTextBox7 = new dotNetLab.Widgets.MobileTextBox();
-            this.textBlock6 = new dotNetLab.Widgets.TextBlock();
-            this.textBlock10 = new dotNetLab.Widgets.TextBlock();
-            this.mobileTextBox8 = new dotNetLab.Widgets.MobileTextBox();
-            this.mobileTextBox9 = new dotNetLab.Widgets.MobileTextBox();
-            this.textBlock11 = new dotNetLab.Widgets.TextBlock();
             this.card1.SuspendLayout();
             this.card2.SuspendLayout();
             this.SuspendLayout();
@@ -189,6 +189,228 @@ namespace shikii.VisionJob
             this.mobileTextBox2.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
             this.mobileTextBox2.UIElementBinders = null;
             this.mobileTextBox2.WhitePattern = false;
+            // 
+            // mobileTextBox4
+            // 
+            this.mobileTextBox4.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox4.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo4.DBEngineIndex = 0;
+            uiElementBinderInfo4.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo4.FieldName = "Val";
+            uiElementBinderInfo4.Filter = "Name=\'LoopGapTime\' ";
+            uiElementBinderInfo4.Ptr = null;
+            uiElementBinderInfo4.StoreInDB = true;
+            uiElementBinderInfo4.StoreIntoDBRealTime = true;
+            uiElementBinderInfo4.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo4.ThisControl = this.mobileTextBox4;
+            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo4;
+            this.mobileTextBox4.DoubleValue = double.NaN;
+            this.mobileTextBox4.EnableMobileRound = true;
+            this.mobileTextBox4.EnableNullValue = false;
+            this.mobileTextBox4.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox4.FloatValue = float.NaN;
+            this.mobileTextBox4.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox4.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox4.GreyPattern = false;
+            this.mobileTextBox4.IntValue = -2147483648;
+            this.mobileTextBox4.LineThickness = 2F;
+            this.mobileTextBox4.Location = new System.Drawing.Point(112, 140);
+            this.mobileTextBox4.MainBindableProperty = "";
+            this.mobileTextBox4.Name = "mobileTextBox4";
+            this.mobileTextBox4.Radius = 29;
+            this.mobileTextBox4.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox4.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox4.TabIndex = 7;
+            this.mobileTextBox4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox4.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox4.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox4.UIElementBinders = null;
+            this.mobileTextBox4.WhitePattern = false;
+            // 
+            // mobileTextBox5
+            // 
+            this.mobileTextBox5.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox5.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo5.DBEngineIndex = 0;
+            uiElementBinderInfo5.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo5.FieldName = "Val";
+            uiElementBinderInfo5.Filter = "Name=\'IP\' ";
+            uiElementBinderInfo5.Ptr = null;
+            uiElementBinderInfo5.StoreInDB = true;
+            uiElementBinderInfo5.StoreIntoDBRealTime = true;
+            uiElementBinderInfo5.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo5.ThisControl = this.mobileTextBox5;
+            this.mobileTextBox5.DataBindingInfo = uiElementBinderInfo5;
+            this.mobileTextBox5.DoubleValue = double.NaN;
+            this.mobileTextBox5.EnableMobileRound = true;
+            this.mobileTextBox5.EnableNullValue = false;
+            this.mobileTextBox5.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox5.FloatValue = float.NaN;
+            this.mobileTextBox5.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox5.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox5.GreyPattern = false;
+            this.mobileTextBox5.IntValue = -2147483648;
+            this.mobileTextBox5.LineThickness = 2F;
+            this.mobileTextBox5.Location = new System.Drawing.Point(112, 52);
+            this.mobileTextBox5.MainBindableProperty = "";
+            this.mobileTextBox5.Name = "mobileTextBox5";
+            this.mobileTextBox5.Radius = 29;
+            this.mobileTextBox5.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox5.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox5.TabIndex = 8;
+            this.mobileTextBox5.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox5.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox5.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox5.UIElementBinders = null;
+            this.mobileTextBox5.WhitePattern = false;
+            // 
+            // mobileTextBox6
+            // 
+            this.mobileTextBox6.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox6.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo6.DBEngineIndex = 0;
+            uiElementBinderInfo6.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo6.FieldName = "Val";
+            uiElementBinderInfo6.Filter = "Name=\'Port\' ";
+            uiElementBinderInfo6.Ptr = null;
+            uiElementBinderInfo6.StoreInDB = true;
+            uiElementBinderInfo6.StoreIntoDBRealTime = true;
+            uiElementBinderInfo6.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo6.ThisControl = this.mobileTextBox6;
+            this.mobileTextBox6.DataBindingInfo = uiElementBinderInfo6;
+            this.mobileTextBox6.DoubleValue = double.NaN;
+            this.mobileTextBox6.EnableMobileRound = true;
+            this.mobileTextBox6.EnableNullValue = false;
+            this.mobileTextBox6.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox6.FloatValue = float.NaN;
+            this.mobileTextBox6.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox6.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox6.GreyPattern = false;
+            this.mobileTextBox6.IntValue = -2147483648;
+            this.mobileTextBox6.LineThickness = 2F;
+            this.mobileTextBox6.Location = new System.Drawing.Point(112, 97);
+            this.mobileTextBox6.MainBindableProperty = "";
+            this.mobileTextBox6.Name = "mobileTextBox6";
+            this.mobileTextBox6.Radius = 29;
+            this.mobileTextBox6.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox6.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox6.TabIndex = 9;
+            this.mobileTextBox6.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox6.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox6.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox6.UIElementBinders = null;
+            this.mobileTextBox6.WhitePattern = false;
+            // 
+            // mobileTextBox7
+            // 
+            this.mobileTextBox7.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox7.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo7.DBEngineIndex = 0;
+            uiElementBinderInfo7.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo7.FieldName = "Val";
+            uiElementBinderInfo7.Filter = "Name=\'IP\' ";
+            uiElementBinderInfo7.Ptr = null;
+            uiElementBinderInfo7.StoreInDB = true;
+            uiElementBinderInfo7.StoreIntoDBRealTime = true;
+            uiElementBinderInfo7.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo7.ThisControl = this.mobileTextBox7;
+            this.mobileTextBox7.DataBindingInfo = uiElementBinderInfo7;
+            this.mobileTextBox7.DoubleValue = double.NaN;
+            this.mobileTextBox7.EnableMobileRound = true;
+            this.mobileTextBox7.EnableNullValue = false;
+            this.mobileTextBox7.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox7.FloatValue = float.NaN;
+            this.mobileTextBox7.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox7.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox7.GreyPattern = false;
+            this.mobileTextBox7.IntValue = -2147483648;
+            this.mobileTextBox7.LineThickness = 2F;
+            this.mobileTextBox7.Location = new System.Drawing.Point(316, 52);
+            this.mobileTextBox7.MainBindableProperty = "";
+            this.mobileTextBox7.Name = "mobileTextBox7";
+            this.mobileTextBox7.Radius = 29;
+            this.mobileTextBox7.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox7.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox7.TabIndex = 8;
+            this.mobileTextBox7.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox7.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox7.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox7.UIElementBinders = null;
+            this.mobileTextBox7.WhitePattern = false;
+            // 
+            // mobileTextBox8
+            // 
+            this.mobileTextBox8.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox8.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo8.DBEngineIndex = 0;
+            uiElementBinderInfo8.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo8.FieldName = "Val";
+            uiElementBinderInfo8.Filter = "Name=\'IP\' ";
+            uiElementBinderInfo8.Ptr = null;
+            uiElementBinderInfo8.StoreInDB = true;
+            uiElementBinderInfo8.StoreIntoDBRealTime = true;
+            uiElementBinderInfo8.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo8.ThisControl = this.mobileTextBox8;
+            this.mobileTextBox8.DataBindingInfo = uiElementBinderInfo8;
+            this.mobileTextBox8.DoubleValue = double.NaN;
+            this.mobileTextBox8.EnableMobileRound = true;
+            this.mobileTextBox8.EnableNullValue = false;
+            this.mobileTextBox8.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox8.FloatValue = float.NaN;
+            this.mobileTextBox8.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox8.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox8.GreyPattern = false;
+            this.mobileTextBox8.IntValue = -2147483648;
+            this.mobileTextBox8.LineThickness = 2F;
+            this.mobileTextBox8.Location = new System.Drawing.Point(316, 98);
+            this.mobileTextBox8.MainBindableProperty = "";
+            this.mobileTextBox8.Name = "mobileTextBox8";
+            this.mobileTextBox8.Radius = 29;
+            this.mobileTextBox8.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox8.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox8.TabIndex = 8;
+            this.mobileTextBox8.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox8.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox8.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox8.UIElementBinders = null;
+            this.mobileTextBox8.WhitePattern = false;
+            // 
+            // mobileTextBox9
+            // 
+            this.mobileTextBox9.ActiveColor = System.Drawing.Color.Cyan;
+            this.mobileTextBox9.BackColor = System.Drawing.Color.Transparent;
+            uiElementBinderInfo9.DBEngineIndex = 0;
+            uiElementBinderInfo9.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo9.FieldName = "Val";
+            uiElementBinderInfo9.Filter = "Name=\'IP\' ";
+            uiElementBinderInfo9.Ptr = null;
+            uiElementBinderInfo9.StoreInDB = true;
+            uiElementBinderInfo9.StoreIntoDBRealTime = true;
+            uiElementBinderInfo9.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo9.ThisControl = this.mobileTextBox9;
+            this.mobileTextBox9.DataBindingInfo = uiElementBinderInfo9;
+            this.mobileTextBox9.DoubleValue = double.NaN;
+            this.mobileTextBox9.EnableMobileRound = true;
+            this.mobileTextBox9.EnableNullValue = false;
+            this.mobileTextBox9.FillColor = System.Drawing.Color.Transparent;
+            this.mobileTextBox9.FloatValue = float.NaN;
+            this.mobileTextBox9.Font = new System.Drawing.Font("微软雅黑", 13F);
+            this.mobileTextBox9.ForeColor = System.Drawing.Color.Black;
+            this.mobileTextBox9.GreyPattern = false;
+            this.mobileTextBox9.IntValue = -2147483648;
+            this.mobileTextBox9.LineThickness = 2F;
+            this.mobileTextBox9.Location = new System.Drawing.Point(316, 141);
+            this.mobileTextBox9.MainBindableProperty = "";
+            this.mobileTextBox9.Name = "mobileTextBox9";
+            this.mobileTextBox9.Radius = 29;
+            this.mobileTextBox9.Size = new System.Drawing.Size(98, 30);
+            this.mobileTextBox9.StaticColor = System.Drawing.Color.Gray;
+            this.mobileTextBox9.TabIndex = 8;
+            this.mobileTextBox9.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mobileTextBox9.TextBackColor = System.Drawing.SystemColors.Window;
+            this.mobileTextBox9.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
+            this.mobileTextBox9.UIElementBinders = null;
+            this.mobileTextBox9.WhitePattern = false;
             // 
             // textBlock9
             // 
@@ -401,6 +623,90 @@ namespace shikii.VisionJob
             this.textBlock2.Vertical = false;
             this.textBlock2.WhereReturn = ((byte)(0));
             // 
+            // textBlock11
+            // 
+            this.textBlock11.BackColor = System.Drawing.Color.Transparent;
+            this.textBlock11.BorderColor = System.Drawing.Color.Empty;
+            this.textBlock11.BorderThickness = 0;
+            this.textBlock11.DataBindingInfo = null;
+            this.textBlock11.EnableFlag = true;
+            this.textBlock11.EnableTextRenderHint = true;
+            this.textBlock11.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.textBlock11.FlagColor = System.Drawing.Color.Crimson;
+            this.textBlock11.FlagThickness = 8;
+            this.textBlock11.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.textBlock11.GapBetweenTextFlag = 10;
+            this.textBlock11.LEDStyle = false;
+            this.textBlock11.Location = new System.Drawing.Point(234, 147);
+            this.textBlock11.MainBindableProperty = "奇偶性 : ";
+            this.textBlock11.Name = "textBlock11";
+            this.textBlock11.Radius = 0;
+            this.textBlock11.Size = new System.Drawing.Size(76, 23);
+            this.textBlock11.TabIndex = 6;
+            this.textBlock11.Text = "奇偶性 : ";
+            this.textBlock11.UIElementBinders = null;
+            this.textBlock11.UnderLine = false;
+            this.textBlock11.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.textBlock11.UnderLineThickness = 2F;
+            this.textBlock11.Vertical = false;
+            this.textBlock11.WhereReturn = ((byte)(0));
+            // 
+            // textBlock10
+            // 
+            this.textBlock10.BackColor = System.Drawing.Color.Transparent;
+            this.textBlock10.BorderColor = System.Drawing.Color.Empty;
+            this.textBlock10.BorderThickness = 0;
+            this.textBlock10.DataBindingInfo = null;
+            this.textBlock10.EnableFlag = true;
+            this.textBlock10.EnableTextRenderHint = true;
+            this.textBlock10.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.textBlock10.FlagColor = System.Drawing.Color.Crimson;
+            this.textBlock10.FlagThickness = 8;
+            this.textBlock10.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.textBlock10.GapBetweenTextFlag = 10;
+            this.textBlock10.LEDStyle = false;
+            this.textBlock10.Location = new System.Drawing.Point(234, 104);
+            this.textBlock10.MainBindableProperty = "停止位：";
+            this.textBlock10.Name = "textBlock10";
+            this.textBlock10.Radius = 0;
+            this.textBlock10.Size = new System.Drawing.Size(76, 23);
+            this.textBlock10.TabIndex = 6;
+            this.textBlock10.Text = "停止位：";
+            this.textBlock10.UIElementBinders = null;
+            this.textBlock10.UnderLine = false;
+            this.textBlock10.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.textBlock10.UnderLineThickness = 2F;
+            this.textBlock10.Vertical = false;
+            this.textBlock10.WhereReturn = ((byte)(0));
+            // 
+            // textBlock6
+            // 
+            this.textBlock6.BackColor = System.Drawing.Color.Transparent;
+            this.textBlock6.BorderColor = System.Drawing.Color.Empty;
+            this.textBlock6.BorderThickness = 0;
+            this.textBlock6.DataBindingInfo = null;
+            this.textBlock6.EnableFlag = true;
+            this.textBlock6.EnableTextRenderHint = true;
+            this.textBlock6.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.textBlock6.FlagColor = System.Drawing.Color.Crimson;
+            this.textBlock6.FlagThickness = 8;
+            this.textBlock6.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.textBlock6.GapBetweenTextFlag = 10;
+            this.textBlock6.LEDStyle = false;
+            this.textBlock6.Location = new System.Drawing.Point(234, 56);
+            this.textBlock6.MainBindableProperty = "数据位：";
+            this.textBlock6.Name = "textBlock6";
+            this.textBlock6.Radius = 0;
+            this.textBlock6.Size = new System.Drawing.Size(76, 23);
+            this.textBlock6.TabIndex = 6;
+            this.textBlock6.Text = "数据位：";
+            this.textBlock6.UIElementBinders = null;
+            this.textBlock6.UnderLine = false;
+            this.textBlock6.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.textBlock6.UnderLineThickness = 2F;
+            this.textBlock6.Vertical = false;
+            this.textBlock6.WhereReturn = ((byte)(0));
+            // 
             // textBlock3
             // 
             this.textBlock3.BackColor = System.Drawing.Color.Transparent;
@@ -428,43 +734,6 @@ namespace shikii.VisionJob
             this.textBlock3.UnderLineThickness = 2F;
             this.textBlock3.Vertical = false;
             this.textBlock3.WhereReturn = ((byte)(0));
-            // 
-            // mobileTextBox4
-            // 
-            this.mobileTextBox4.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox4.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo4.DBEngineIndex = 0;
-            uiElementBinderInfo4.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo4.FieldName = "Val";
-            uiElementBinderInfo4.Filter = "Name=\'LoopGapTime\' ";
-            uiElementBinderInfo4.Ptr = null;
-            uiElementBinderInfo4.StoreInDB = true;
-            uiElementBinderInfo4.StoreIntoDBRealTime = true;
-            uiElementBinderInfo4.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo4.ThisControl = this.mobileTextBox4;
-            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo4;
-            this.mobileTextBox4.DoubleValue = double.NaN;
-            this.mobileTextBox4.EnableMobileRound = true;
-            this.mobileTextBox4.EnableNullValue = false;
-            this.mobileTextBox4.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox4.FloatValue = float.NaN;
-            this.mobileTextBox4.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox4.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox4.GreyPattern = false;
-            this.mobileTextBox4.IntValue = -2147483648;
-            this.mobileTextBox4.LineThickness = 2F;
-            this.mobileTextBox4.Location = new System.Drawing.Point(112, 140);
-            this.mobileTextBox4.MainBindableProperty = "";
-            this.mobileTextBox4.Name = "mobileTextBox4";
-            this.mobileTextBox4.Radius = 29;
-            this.mobileTextBox4.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox4.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox4.TabIndex = 7;
-            this.mobileTextBox4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox4.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox4.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox4.UIElementBinders = null;
-            this.mobileTextBox4.WhitePattern = false;
             // 
             // textBlock4
             // 
@@ -522,283 +791,14 @@ namespace shikii.VisionJob
             this.textBlock5.Vertical = false;
             this.textBlock5.WhereReturn = ((byte)(0));
             // 
-            // mobileTextBox5
-            // 
-            this.mobileTextBox5.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox5.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo8.DBEngineIndex = 0;
-            uiElementBinderInfo8.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo8.FieldName = "Val";
-            uiElementBinderInfo8.Filter = "Name=\'IP\' ";
-            uiElementBinderInfo8.Ptr = null;
-            uiElementBinderInfo8.StoreInDB = true;
-            uiElementBinderInfo8.StoreIntoDBRealTime = true;
-            uiElementBinderInfo8.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo8.ThisControl = this.mobileTextBox5;
-            this.mobileTextBox5.DataBindingInfo = uiElementBinderInfo8;
-            this.mobileTextBox5.DoubleValue = double.NaN;
-            this.mobileTextBox5.EnableMobileRound = true;
-            this.mobileTextBox5.EnableNullValue = false;
-            this.mobileTextBox5.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox5.FloatValue = float.NaN;
-            this.mobileTextBox5.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox5.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox5.GreyPattern = false;
-            this.mobileTextBox5.IntValue = -2147483648;
-            this.mobileTextBox5.LineThickness = 2F;
-            this.mobileTextBox5.Location = new System.Drawing.Point(112, 52);
-            this.mobileTextBox5.MainBindableProperty = "";
-            this.mobileTextBox5.Name = "mobileTextBox5";
-            this.mobileTextBox5.Radius = 29;
-            this.mobileTextBox5.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox5.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox5.TabIndex = 8;
-            this.mobileTextBox5.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox5.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox5.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox5.UIElementBinders = null;
-            this.mobileTextBox5.WhitePattern = false;
-            // 
-            // mobileTextBox6
-            // 
-            this.mobileTextBox6.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox6.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo9.DBEngineIndex = 0;
-            uiElementBinderInfo9.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo9.FieldName = "Val";
-            uiElementBinderInfo9.Filter = "Name=\'Port\' ";
-            uiElementBinderInfo9.Ptr = null;
-            uiElementBinderInfo9.StoreInDB = true;
-            uiElementBinderInfo9.StoreIntoDBRealTime = true;
-            uiElementBinderInfo9.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo9.ThisControl = this.mobileTextBox6;
-            this.mobileTextBox6.DataBindingInfo = uiElementBinderInfo9;
-            this.mobileTextBox6.DoubleValue = double.NaN;
-            this.mobileTextBox6.EnableMobileRound = true;
-            this.mobileTextBox6.EnableNullValue = false;
-            this.mobileTextBox6.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox6.FloatValue = float.NaN;
-            this.mobileTextBox6.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox6.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox6.GreyPattern = false;
-            this.mobileTextBox6.IntValue = -2147483648;
-            this.mobileTextBox6.LineThickness = 2F;
-            this.mobileTextBox6.Location = new System.Drawing.Point(112, 97);
-            this.mobileTextBox6.MainBindableProperty = "";
-            this.mobileTextBox6.Name = "mobileTextBox6";
-            this.mobileTextBox6.Radius = 29;
-            this.mobileTextBox6.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox6.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox6.TabIndex = 9;
-            this.mobileTextBox6.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox6.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox6.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox6.UIElementBinders = null;
-            this.mobileTextBox6.WhitePattern = false;
-            // 
-            // mobileTextBox7
-            // 
-            this.mobileTextBox7.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox7.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo7.DBEngineIndex = 0;
-            uiElementBinderInfo7.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo7.FieldName = "Val";
-            uiElementBinderInfo7.Filter = "Name=\'IP\' ";
-            uiElementBinderInfo7.Ptr = null;
-            uiElementBinderInfo7.StoreInDB = true;
-            uiElementBinderInfo7.StoreIntoDBRealTime = true;
-            uiElementBinderInfo7.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo7.ThisControl = this.mobileTextBox7;
-            this.mobileTextBox7.DataBindingInfo = uiElementBinderInfo7;
-            this.mobileTextBox7.DoubleValue = double.NaN;
-            this.mobileTextBox7.EnableMobileRound = true;
-            this.mobileTextBox7.EnableNullValue = false;
-            this.mobileTextBox7.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox7.FloatValue = float.NaN;
-            this.mobileTextBox7.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox7.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox7.GreyPattern = false;
-            this.mobileTextBox7.IntValue = -2147483648;
-            this.mobileTextBox7.LineThickness = 2F;
-            this.mobileTextBox7.Location = new System.Drawing.Point(316, 52);
-            this.mobileTextBox7.MainBindableProperty = "";
-            this.mobileTextBox7.Name = "mobileTextBox7";
-            this.mobileTextBox7.Radius = 29;
-            this.mobileTextBox7.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox7.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox7.TabIndex = 8;
-            this.mobileTextBox7.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox7.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox7.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox7.UIElementBinders = null;
-            this.mobileTextBox7.WhitePattern = false;
-            // 
-            // textBlock6
-            // 
-            this.textBlock6.BackColor = System.Drawing.Color.Transparent;
-            this.textBlock6.BorderColor = System.Drawing.Color.Empty;
-            this.textBlock6.BorderThickness = 0;
-            this.textBlock6.DataBindingInfo = null;
-            this.textBlock6.EnableFlag = true;
-            this.textBlock6.EnableTextRenderHint = true;
-            this.textBlock6.FlagAlign = dotNetLab.Widgets.Alignments.Left;
-            this.textBlock6.FlagColor = System.Drawing.Color.Crimson;
-            this.textBlock6.FlagThickness = 8;
-            this.textBlock6.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBlock6.GapBetweenTextFlag = 10;
-            this.textBlock6.LEDStyle = false;
-            this.textBlock6.Location = new System.Drawing.Point(234, 56);
-            this.textBlock6.MainBindableProperty = "数据位：";
-            this.textBlock6.Name = "textBlock6";
-            this.textBlock6.Radius = 0;
-            this.textBlock6.Size = new System.Drawing.Size(76, 23);
-            this.textBlock6.TabIndex = 6;
-            this.textBlock6.Text = "数据位：";
-            this.textBlock6.UIElementBinders = null;
-            this.textBlock6.UnderLine = false;
-            this.textBlock6.UnderLineColor = System.Drawing.Color.DarkGray;
-            this.textBlock6.UnderLineThickness = 2F;
-            this.textBlock6.Vertical = false;
-            this.textBlock6.WhereReturn = ((byte)(0));
-            // 
-            // textBlock10
-            // 
-            this.textBlock10.BackColor = System.Drawing.Color.Transparent;
-            this.textBlock10.BorderColor = System.Drawing.Color.Empty;
-            this.textBlock10.BorderThickness = 0;
-            this.textBlock10.DataBindingInfo = null;
-            this.textBlock10.EnableFlag = true;
-            this.textBlock10.EnableTextRenderHint = true;
-            this.textBlock10.FlagAlign = dotNetLab.Widgets.Alignments.Left;
-            this.textBlock10.FlagColor = System.Drawing.Color.Crimson;
-            this.textBlock10.FlagThickness = 8;
-            this.textBlock10.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBlock10.GapBetweenTextFlag = 10;
-            this.textBlock10.LEDStyle = false;
-            this.textBlock10.Location = new System.Drawing.Point(234, 104);
-            this.textBlock10.MainBindableProperty = "停止位：";
-            this.textBlock10.Name = "textBlock10";
-            this.textBlock10.Radius = 0;
-            this.textBlock10.Size = new System.Drawing.Size(76, 23);
-            this.textBlock10.TabIndex = 6;
-            this.textBlock10.Text = "停止位：";
-            this.textBlock10.UIElementBinders = null;
-            this.textBlock10.UnderLine = false;
-            this.textBlock10.UnderLineColor = System.Drawing.Color.DarkGray;
-            this.textBlock10.UnderLineThickness = 2F;
-            this.textBlock10.Vertical = false;
-            this.textBlock10.WhereReturn = ((byte)(0));
-            // 
-            // mobileTextBox8
-            // 
-            this.mobileTextBox8.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox8.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo6.DBEngineIndex = 0;
-            uiElementBinderInfo6.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo6.FieldName = "Val";
-            uiElementBinderInfo6.Filter = "Name=\'IP\' ";
-            uiElementBinderInfo6.Ptr = null;
-            uiElementBinderInfo6.StoreInDB = true;
-            uiElementBinderInfo6.StoreIntoDBRealTime = true;
-            uiElementBinderInfo6.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo6.ThisControl = this.mobileTextBox8;
-            this.mobileTextBox8.DataBindingInfo = uiElementBinderInfo6;
-            this.mobileTextBox8.DoubleValue = double.NaN;
-            this.mobileTextBox8.EnableMobileRound = true;
-            this.mobileTextBox8.EnableNullValue = false;
-            this.mobileTextBox8.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox8.FloatValue = float.NaN;
-            this.mobileTextBox8.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox8.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox8.GreyPattern = false;
-            this.mobileTextBox8.IntValue = -2147483648;
-            this.mobileTextBox8.LineThickness = 2F;
-            this.mobileTextBox8.Location = new System.Drawing.Point(316, 98);
-            this.mobileTextBox8.MainBindableProperty = "";
-            this.mobileTextBox8.Name = "mobileTextBox8";
-            this.mobileTextBox8.Radius = 29;
-            this.mobileTextBox8.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox8.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox8.TabIndex = 8;
-            this.mobileTextBox8.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox8.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox8.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox8.UIElementBinders = null;
-            this.mobileTextBox8.WhitePattern = false;
-            // 
-            // mobileTextBox9
-            // 
-            this.mobileTextBox9.ActiveColor = System.Drawing.Color.Cyan;
-            this.mobileTextBox9.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo5.DBEngineIndex = 0;
-            uiElementBinderInfo5.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo5.FieldName = "Val";
-            uiElementBinderInfo5.Filter = "Name=\'IP\' ";
-            uiElementBinderInfo5.Ptr = null;
-            uiElementBinderInfo5.StoreInDB = true;
-            uiElementBinderInfo5.StoreIntoDBRealTime = true;
-            uiElementBinderInfo5.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo5.ThisControl = this.mobileTextBox9;
-            this.mobileTextBox9.DataBindingInfo = uiElementBinderInfo5;
-            this.mobileTextBox9.DoubleValue = double.NaN;
-            this.mobileTextBox9.EnableMobileRound = true;
-            this.mobileTextBox9.EnableNullValue = false;
-            this.mobileTextBox9.FillColor = System.Drawing.Color.Transparent;
-            this.mobileTextBox9.FloatValue = float.NaN;
-            this.mobileTextBox9.Font = new System.Drawing.Font("微软雅黑", 13F);
-            this.mobileTextBox9.ForeColor = System.Drawing.Color.Black;
-            this.mobileTextBox9.GreyPattern = false;
-            this.mobileTextBox9.IntValue = -2147483648;
-            this.mobileTextBox9.LineThickness = 2F;
-            this.mobileTextBox9.Location = new System.Drawing.Point(316, 141);
-            this.mobileTextBox9.MainBindableProperty = "";
-            this.mobileTextBox9.Name = "mobileTextBox9";
-            this.mobileTextBox9.Radius = 29;
-            this.mobileTextBox9.Size = new System.Drawing.Size(98, 30);
-            this.mobileTextBox9.StaticColor = System.Drawing.Color.Gray;
-            this.mobileTextBox9.TabIndex = 8;
-            this.mobileTextBox9.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mobileTextBox9.TextBackColor = System.Drawing.SystemColors.Window;
-            this.mobileTextBox9.TextBoxStyle = dotNetLab.Widgets.MobileTextBox.TextBoxStyles.Mobile;
-            this.mobileTextBox9.UIElementBinders = null;
-            this.mobileTextBox9.WhitePattern = false;
-            // 
-            // textBlock11
-            // 
-            this.textBlock11.BackColor = System.Drawing.Color.Transparent;
-            this.textBlock11.BorderColor = System.Drawing.Color.Empty;
-            this.textBlock11.BorderThickness = 0;
-            this.textBlock11.DataBindingInfo = null;
-            this.textBlock11.EnableFlag = true;
-            this.textBlock11.EnableTextRenderHint = true;
-            this.textBlock11.FlagAlign = dotNetLab.Widgets.Alignments.Left;
-            this.textBlock11.FlagColor = System.Drawing.Color.Crimson;
-            this.textBlock11.FlagThickness = 8;
-            this.textBlock11.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.textBlock11.GapBetweenTextFlag = 10;
-            this.textBlock11.LEDStyle = false;
-            this.textBlock11.Location = new System.Drawing.Point(234, 147);
-            this.textBlock11.MainBindableProperty = "奇偶性 : ";
-            this.textBlock11.Name = "textBlock11";
-            this.textBlock11.Radius = 0;
-            this.textBlock11.Size = new System.Drawing.Size(76, 23);
-            this.textBlock11.TabIndex = 6;
-            this.textBlock11.Text = "奇偶性 : ";
-            this.textBlock11.UIElementBinders = null;
-            this.textBlock11.UnderLine = false;
-            this.textBlock11.UnderLineColor = System.Drawing.Color.DarkGray;
-            this.textBlock11.UnderLineThickness = 2F;
-            this.textBlock11.Vertical = false;
-            this.textBlock11.WhereReturn = ((byte)(0));
-            // 
             // TCPNetConnectForm
             // 
             this.ClientSize = new System.Drawing.Size(614, 552);
-            this.ClipboardText = "奇偶性";
             this.Controls.Add(this.card2);
             this.Controls.Add(this.card1);
             this.Name = "TCPNetConnectForm";
             this.Text = "视觉通讯";
+            this.TitlePos = new System.Drawing.Point(70, 15);
             this.Controls.SetChildIndex(this.card1, 0);
             this.Controls.SetChildIndex(this.card2, 0);
             this.card1.ResumeLayout(false);

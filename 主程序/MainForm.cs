@@ -5,10 +5,14 @@ using System.Windows.Forms;
 using dotNetLab.Common.ModernUI;
 using dotNetLab.Common;
 using System.Threading;
+//using dotNetLab.Vision.VPro;
+//using Cognex.VisionPro;
+//using Cognex.VisionPro.PMAlign;
+//using Cognex.VisionPro.Blob;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
-using HalconDotNet;
+
 namespace shikii.VisionJob
 {
     public partial class MainForm : dotNetLab.Common.ModernUI.PageBase
@@ -19,7 +23,14 @@ namespace shikii.VisionJob
         public dotNetLab.Widgets.MobileListBox mobileListBox1;
         private dotNetLab.Widgets.Direction btn_More;
         TCPFactoryServer factoryServer;
-       
+        //List<Point> pnts_Results;
+        //internal class CheckPoint
+        //{
+        //    public Point pnt = new Point();
+        //    public bool isEmpty = true;
+
+        //}
+        //  Canvas cnv;
 
         protected override void prepareData()
         {
@@ -74,8 +85,8 @@ namespace shikii.VisionJob
             }
         }
       
-
-        void AutoSaveClearImage(Bitmap bmp)
+        //要使MenuForm 自动清理文本框正常显示请启用下列代码
+        protected void AutoSaveClearImage(Bitmap bmp)
         {
             //自动保存及清理图片
             //保存
