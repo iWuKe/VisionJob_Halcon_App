@@ -12,6 +12,8 @@ using System.Threading;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
+using HalconDotNet;
+using dotNetLab.Vision.Halcon;
 
 namespace shikii.VisionJob
 {
@@ -109,6 +111,44 @@ namespace shikii.VisionJob
                 Directory.CreateDirectory(strNowPictureToGo);
             }
             bmp.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+            // bmp.Save( DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp");
+            int nGapDays = CompactDB.FetchIntValue("AutoClearTime");
+            DateTime dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(-nGapDays);
+            string deletingFolderName = dt.ToString("yyyy-MM-dd");
+            if (!Directory.Exists(Path.Combine(picturePath, deletingFolderName)))
+                return;
+            string directoryName = Path.Combine(picturePath, deletingFolderName);
+            String[] strFiles = Directory.GetFiles(directoryName);
+            for (int j = 0; j < strFiles.Length; j++)
+            {
+                File.Delete(strFiles[j]);
+            }
+            Directory.Delete(directoryName);
+        }
+
+        protected void AutoSaveClearImage(HImage image)
+        {
+            //自动保存及清理图片
+            //保存
+            List<String> lst = CompactDB.GetNameColumnValues(CompactDB.DefaultTable);
+            if (!lst.Contains("AutoClearTime"))
+            {
+                CompactDB.Write("AutoClearTime", "3");
+            }
+
+
+            String picturePath = "图片";
+            if (!Directory.Exists("图片"))
+            {
+                Directory.CreateDirectory(picturePath);
+            }
+            //当前图片保存到哪个位置
+            String strNowPictureToGo = String.Format("图片\\{0}", DateTime.Now.ToString("yyyy-MM-dd"));
+            if (!Directory.Exists(strNowPictureToGo))
+            {
+                Directory.CreateDirectory(strNowPictureToGo);
+            }
+             image.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
             // bmp.Save( DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp");
             int nGapDays = CompactDB.FetchIntValue("AutoClearTime");
             DateTime dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(-nGapDays);
