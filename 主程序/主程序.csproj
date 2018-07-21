@@ -114,6 +114,7 @@
       <DependentUpon>Dsp_Base.cs</DependentUpon>
     </Compile>
     <Compile Include="显示窗口布局\DspWndLayout.cs" />
+    <Compile Include="通讯\TCPFactoryClient.cs" />
     <Compile Include="通讯\TCPFactoryServer.cs" />
     <Compile Include="通讯\TCPNetConnectForm.cs">
       <SubType>Form</SubType>
