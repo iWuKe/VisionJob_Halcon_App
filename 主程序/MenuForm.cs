@@ -61,6 +61,10 @@ namespace shikii.VisionJob
             {
                 Directory.CreateDirectory("Projs");
             }
+            if (!lst.Contains("AutoClearTime"))
+            {
+                CompactDB.Write("AutoClearTime", "3");
+            }
 
         }
         protected override void prepareAppearance()
