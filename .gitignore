@@ -5,3 +5,6 @@
 /主程序/obj/x86/Debug/*.cache
 /主程序外部接口/obj/Debug/*.cache
 /主程序/obj/x86/Debug/*.CopyComplete
+/.vs/单一视觉项目
+/主程序/obj/x86/Debug
+/主程序/bin/Debug
