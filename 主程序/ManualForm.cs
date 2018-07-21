@@ -131,7 +131,6 @@ namespace shikii.VisionJob
 
 
 
-
         private System.Windows.Forms.ComboBox cmbx_GongWei;
         private dotNetLab.Widgets.MobileButton btn_RunSingleGongWei;
         private dotNetLab.Widgets.MobileButton btn_RunProject;
