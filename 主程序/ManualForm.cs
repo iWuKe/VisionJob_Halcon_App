@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using dotNetLab.Common.ModernUI;
+using dotNetLab.Vision.Halcon;
 
 namespace shikii.VisionJob
 {
@@ -12,8 +13,12 @@ namespace shikii.VisionJob
         private dotNetLab.Widgets.MobileButton btn_RunSingleGongWei;
         private dotNetLab.Widgets.MobileButton btn_RunProject;
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
+        private System.Windows.Forms.ComboBox cmbx_HalconScriptName;
+        private dotNetLab.Widgets.MobileButton btn_UploadScript;
+        private dotNetLab.Widgets.MobileButton btn_DownloadScript;
+        private dotNetLab.Widgets.TextBlock textBlock2;
         private dotNetLab.Widgets.TextBlock textBlock1;
-   
+         
        protected override void prepareAppearance()
        {
            base.prepareAppearance();
@@ -38,13 +43,17 @@ namespace shikii.VisionJob
        {
 
        }
-        private void InitializeComponent()
+       private void InitializeComponent()
         {
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
             this.cmbx_GongWei = new System.Windows.Forms.ComboBox();
             this.btn_RunSingleGongWei = new dotNetLab.Widgets.MobileButton();
             this.btn_RunProject = new dotNetLab.Widgets.MobileButton();
             this.colorDecorator1 = new dotNetLab.Widgets.ColorDecorator();
+            this.cmbx_HalconScriptName = new System.Windows.Forms.ComboBox();
+            this.btn_UploadScript = new dotNetLab.Widgets.MobileButton();
+            this.btn_DownloadScript = new dotNetLab.Widgets.MobileButton();
+            this.textBlock2 = new dotNetLab.Widgets.TextBlock();
             this.SuspendLayout();
             // 
             // tipper
@@ -181,24 +190,176 @@ namespace shikii.VisionJob
             this.colorDecorator1.TabIndex = 5;
             this.colorDecorator1.UIElementBinders = null;
             // 
+            // cmbx_HalconScriptName
+            // 
+            this.cmbx_HalconScriptName.BackColor = System.Drawing.Color.Silver;
+            this.cmbx_HalconScriptName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbx_HalconScriptName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbx_HalconScriptName.ForeColor = System.Drawing.Color.White;
+            this.cmbx_HalconScriptName.FormattingEnabled = true;
+            this.cmbx_HalconScriptName.Location = new System.Drawing.Point(193, 214);
+            this.cmbx_HalconScriptName.Name = "cmbx_HalconScriptName";
+            this.cmbx_HalconScriptName.Size = new System.Drawing.Size(380, 29);
+            this.cmbx_HalconScriptName.TabIndex = 2;
+            // 
+            // btn_UploadScript
+            // 
+            this.btn_UploadScript.BackColor = System.Drawing.Color.Transparent;
+            this.btn_UploadScript.BorderColor = System.Drawing.Color.Empty;
+            this.btn_UploadScript.BorderThickness = -1;
+            this.btn_UploadScript.CornerAligment = dotNetLab.Widgets.Alignments.All;
+            this.btn_UploadScript.DataBindingInfo = null;
+            this.btn_UploadScript.EnableFlag = false;
+            this.btn_UploadScript.EnableMobileRound = true;
+            this.btn_UploadScript.EnableTextRenderHint = false;
+            this.btn_UploadScript.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.btn_UploadScript.FlagColor = System.Drawing.Color.DodgerBlue;
+            this.btn_UploadScript.FlagThickness = 5;
+            this.btn_UploadScript.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_UploadScript.ForeColor = System.Drawing.Color.White;
+            this.btn_UploadScript.GapBetweenTextFlag = 10;
+            this.btn_UploadScript.GapBetweenTextImage = 8;
+            this.btn_UploadScript.IConAlignment = System.Windows.Forms.LeftRightAlignment.Left;
+            this.btn_UploadScript.ImageSize = new System.Drawing.Size(0, 0);
+            this.btn_UploadScript.LEDStyle = false;
+            this.btn_UploadScript.Location = new System.Drawing.Point(354, 270);
+            this.btn_UploadScript.MainBindableProperty = "上传脚本";
+            this.btn_UploadScript.Name = "btn_UploadScript";
+            this.btn_UploadScript.NeedAnimation = true;
+            this.btn_UploadScript.NormalColor = System.Drawing.Color.Crimson;
+            this.btn_UploadScript.PressColor = System.Drawing.Color.Cyan;
+            this.btn_UploadScript.Radius = 37;
+            this.btn_UploadScript.Size = new System.Drawing.Size(113, 38);
+            this.btn_UploadScript.Source = null;
+            this.btn_UploadScript.TabIndex = 3;
+            this.btn_UploadScript.Text = "上传脚本";
+            this.btn_UploadScript.UIElementBinders = null;
+            this.btn_UploadScript.UnderLine = false;
+            this.btn_UploadScript.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.btn_UploadScript.UnderLineThickness = 2F;
+            this.btn_UploadScript.Vertical = false;
+            this.btn_UploadScript.WhereReturn = ((byte)(0));
+            this.btn_UploadScript.Click += new System.EventHandler(this.btn_UploadScript_Click);
+            // 
+            // btn_DownloadScript
+            // 
+            this.btn_DownloadScript.BackColor = System.Drawing.Color.Transparent;
+            this.btn_DownloadScript.BorderColor = System.Drawing.Color.Empty;
+            this.btn_DownloadScript.BorderThickness = -1;
+            this.btn_DownloadScript.CornerAligment = dotNetLab.Widgets.Alignments.All;
+            this.btn_DownloadScript.DataBindingInfo = null;
+            this.btn_DownloadScript.EnableFlag = false;
+            this.btn_DownloadScript.EnableMobileRound = true;
+            this.btn_DownloadScript.EnableTextRenderHint = false;
+            this.btn_DownloadScript.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.btn_DownloadScript.FlagColor = System.Drawing.Color.DodgerBlue;
+            this.btn_DownloadScript.FlagThickness = 5;
+            this.btn_DownloadScript.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.btn_DownloadScript.ForeColor = System.Drawing.Color.White;
+            this.btn_DownloadScript.GapBetweenTextFlag = 10;
+            this.btn_DownloadScript.GapBetweenTextImage = 8;
+            this.btn_DownloadScript.IConAlignment = System.Windows.Forms.LeftRightAlignment.Left;
+            this.btn_DownloadScript.ImageSize = new System.Drawing.Size(0, 0);
+            this.btn_DownloadScript.LEDStyle = false;
+            this.btn_DownloadScript.Location = new System.Drawing.Point(473, 270);
+            this.btn_DownloadScript.MainBindableProperty = "下载脚本";
+            this.btn_DownloadScript.Name = "btn_DownloadScript";
+            this.btn_DownloadScript.NeedAnimation = true;
+            this.btn_DownloadScript.NormalColor = System.Drawing.Color.LimeGreen;
+            this.btn_DownloadScript.PressColor = System.Drawing.Color.Cyan;
+            this.btn_DownloadScript.Radius = 37;
+            this.btn_DownloadScript.Size = new System.Drawing.Size(113, 38);
+            this.btn_DownloadScript.Source = null;
+            this.btn_DownloadScript.TabIndex = 3;
+            this.btn_DownloadScript.Text = "下载脚本";
+            this.btn_DownloadScript.UIElementBinders = null;
+            this.btn_DownloadScript.UnderLine = false;
+            this.btn_DownloadScript.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.btn_DownloadScript.UnderLineThickness = 2F;
+            this.btn_DownloadScript.Vertical = false;
+            this.btn_DownloadScript.WhereReturn = ((byte)(0));
+            this.btn_DownloadScript.Click += new System.EventHandler(this.btn_DownloadScript_Click);
+            // 
+            // textBlock2
+            // 
+            this.textBlock2.BackColor = System.Drawing.Color.Transparent;
+            this.textBlock2.BorderColor = System.Drawing.Color.Empty;
+            this.textBlock2.BorderThickness = -1;
+            this.textBlock2.DataBindingInfo = null;
+            this.textBlock2.EnableFlag = true;
+            this.textBlock2.EnableTextRenderHint = true;
+            this.textBlock2.FlagAlign = dotNetLab.Widgets.Alignments.Left;
+            this.textBlock2.FlagColor = System.Drawing.Color.Crimson;
+            this.textBlock2.FlagThickness = 8;
+            this.textBlock2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.textBlock2.GapBetweenTextFlag = 10;
+            this.textBlock2.LEDStyle = false;
+            this.textBlock2.Location = new System.Drawing.Point(66, 218);
+            this.textBlock2.MainBindableProperty = "上传脚本";
+            this.textBlock2.Name = "textBlock2";
+            this.textBlock2.Radius = -1;
+            this.textBlock2.Size = new System.Drawing.Size(121, 25);
+            this.textBlock2.TabIndex = 1;
+            this.textBlock2.Text = "上传脚本";
+            this.textBlock2.UIElementBinders = null;
+            this.textBlock2.UnderLine = false;
+            this.textBlock2.UnderLineColor = System.Drawing.Color.DarkGray;
+            this.textBlock2.UnderLineThickness = 2F;
+            this.textBlock2.Vertical = false;
+            this.textBlock2.WhereReturn = ((byte)(0));
+            // 
             // ManualForm
             // 
             this.ClientSize = new System.Drawing.Size(644, 500);
+            this.ClipboardText = "HalconEngineManager";
             this.Controls.Add(this.colorDecorator1);
             this.Controls.Add(this.btn_RunProject);
+            this.Controls.Add(this.btn_DownloadScript);
+            this.Controls.Add(this.btn_UploadScript);
             this.Controls.Add(this.btn_RunSingleGongWei);
+            this.Controls.Add(this.cmbx_HalconScriptName);
             this.Controls.Add(this.cmbx_GongWei);
+            this.Controls.Add(this.textBlock2);
             this.Controls.Add(this.textBlock1);
             this.Name = "ManualForm";
             this.Text = "手动操作";
             this.TitlePos = new System.Drawing.Point(60, 15);
             this.Controls.SetChildIndex(this.textBlock1, 0);
+            this.Controls.SetChildIndex(this.textBlock2, 0);
             this.Controls.SetChildIndex(this.cmbx_GongWei, 0);
+            this.Controls.SetChildIndex(this.cmbx_HalconScriptName, 0);
             this.Controls.SetChildIndex(this.btn_RunSingleGongWei, 0);
+            this.Controls.SetChildIndex(this.btn_UploadScript, 0);
+            this.Controls.SetChildIndex(this.btn_DownloadScript, 0);
             this.Controls.SetChildIndex(this.btn_RunProject, 0);
             this.Controls.SetChildIndex(this.colorDecorator1, 0);
             this.ResumeLayout(false);
 
+        }
+        
+       private void btn_UploadScript_Click(object sender, EventArgs e)
+       {
+            if (String.IsNullOrEmpty(cmbx_HalconScriptName.Text))
+                return;
+            CompactDB.GetAllTableNames();
+            if(!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
+                CompactDB.CreateKeyValueTable(App.HalconScriptTableName);
+            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+                UploadHalconScript(CompactDB, App.HalconScriptTableName);
+       }
+
+       private void btn_DownloadScript_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(cmbx_HalconScriptName.Text))
+                return;
+             CompactDB.GetAllTableNames();
+            if (!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
+            {
+                dotNetLab.Vision.Halcon.Tipper.Info = "没有任何脚本可供下载";
+                return;
+            }
+            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+                DownloadHalconScript(CompactDB, App.HalconScriptTableName);
         }
     }
 }
