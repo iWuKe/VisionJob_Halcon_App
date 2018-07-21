@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using dotNetLab.Common.ModernUI;
 using dotNetLab.Vision.Halcon;
 
@@ -9,17 +11,9 @@ namespace shikii.VisionJob
 {
    public class ManualForm : SessionPage
     {
-        private System.Windows.Forms.ComboBox cmbx_GongWei;
-        private dotNetLab.Widgets.MobileButton btn_RunSingleGongWei;
-        private dotNetLab.Widgets.MobileButton btn_RunProject;
-        private dotNetLab.Widgets.ColorDecorator colorDecorator1;
-        private System.Windows.Forms.ComboBox cmbx_HalconScriptName;
-        private dotNetLab.Widgets.MobileButton btn_UploadScript;
-        private dotNetLab.Widgets.MobileButton btn_DownloadScript;
-        private dotNetLab.Widgets.TextBlock textBlock2;
-        private dotNetLab.Widgets.TextBlock textBlock1;
-         
-       protected override void prepareAppearance()
+     
+
+        protected override void prepareAppearance()
        {
            base.prepareAppearance();
             this.EnableDialog = true;
@@ -43,7 +37,111 @@ namespace shikii.VisionJob
        {
 
        }
-       private void InitializeComponent()
+       
+        
+       private void btn_UploadScript_Click(object sender, EventArgs e)
+       {
+            try
+            {
+
+            CompactDB.GetAllTableNames();
+            if(!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
+                CompactDB.CreateKeyValueTable(App.HalconScriptTableName);
+            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+                UploadHalconScript(CompactDB, App.HalconScriptTableName);
+            }
+            catch (Exception ex)
+            {
+                 
+               DialogResult dlt   = MessageBox.Show("是否需要绕过特定引擎上传一个脚本文件？", "询问",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(dlt == DialogResult.OK)
+                {
+                    Form form = new Form();
+                    form.Size = new System.Drawing.Size(200, 150);
+                    form.Text = "Procedure Name";
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.BackColor = System.Drawing.Color.Beige;
+                    TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
+                    txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
+                    txb.KeyUp += (s , exx) =>
+                     {
+                         if(exx.KeyCode == Keys.Enter)
+                         {
+                             form.Close();
+                         }
+                     };
+                    form.Controls.Add(txb);
+                    form.ShowDialog();
+                    String ProcedureName = txb.Text.Trim();
+                    string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    String filePath = Path.Combine(strDesktopPath, ProcedureName + ".xml");
+                    String Content = File.ReadAllText(filePath, Encoding.Default);
+                    CompactDB.Write(App.HalconScriptTableName, ProcedureName, Content);
+                    form.Dispose();
+                }
+            }
+       }
+
+       private void btn_DownloadScript_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+                DownloadHalconScript(CompactDB, App.HalconScriptTableName);
+
+            }
+            catch (Exception ex)
+            {
+
+                DialogResult dlt = MessageBox.Show("是否需要绕过特定引擎下载一个脚本文件？", "询问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+               
+                   
+                if (dlt == DialogResult.OK)
+                {
+                    Form form = new Form();
+                    form.Size = new System.Drawing.Size(200, 150);
+                    form.Text = "Procedure Name";
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.BackColor = System.Drawing.Color.Beige;
+                    TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
+                    txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
+                    txb.KeyUp += (s, exx) =>
+                    {
+                        if (exx.KeyCode == Keys.Enter)
+                        {
+                            form.Close();
+                        }
+                    };
+                    form.Controls.Add(txb);
+                    form.ShowDialog();
+                    String ProcedureName = txb.Text.Trim();
+                    string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    String strContent = CompactDB.FetchValue(ProcedureName, App.HalconScriptTableName);
+                    File.WriteAllText(Path.Combine(strDesktopPath, ProcedureName + ".xml")
+                            , strContent, Encoding.Default);
+                    form.Dispose();
+                }
+            }
+        }
+
+
+
+
+
+
+        private System.Windows.Forms.ComboBox cmbx_GongWei;
+        private dotNetLab.Widgets.MobileButton btn_RunSingleGongWei;
+        private dotNetLab.Widgets.MobileButton btn_RunProject;
+        private dotNetLab.Widgets.ColorDecorator colorDecorator1;
+        private System.Windows.Forms.ComboBox cmbx_HalconScriptName;
+        private dotNetLab.Widgets.MobileButton btn_UploadScript;
+        private dotNetLab.Widgets.MobileButton btn_DownloadScript;
+        private dotNetLab.Widgets.TextBlock textBlock2;
+        private dotNetLab.Widgets.TextBlock textBlock1;
+        private void InitializeComponent()
         {
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
             this.cmbx_GongWei = new System.Windows.Forms.ComboBox();
@@ -295,12 +393,12 @@ namespace shikii.VisionJob
             this.textBlock2.GapBetweenTextFlag = 10;
             this.textBlock2.LEDStyle = false;
             this.textBlock2.Location = new System.Drawing.Point(66, 218);
-            this.textBlock2.MainBindableProperty = "上传脚本";
+            this.textBlock2.MainBindableProperty = "上传下载脚本";
             this.textBlock2.Name = "textBlock2";
             this.textBlock2.Radius = -1;
             this.textBlock2.Size = new System.Drawing.Size(121, 25);
             this.textBlock2.TabIndex = 1;
-            this.textBlock2.Text = "上传脚本";
+            this.textBlock2.Text = "上传下载脚本";
             this.textBlock2.UIElementBinders = null;
             this.textBlock2.UnderLine = false;
             this.textBlock2.UnderLineColor = System.Drawing.Color.DarkGray;
@@ -336,30 +434,6 @@ namespace shikii.VisionJob
             this.ResumeLayout(false);
 
         }
-        
-       private void btn_UploadScript_Click(object sender, EventArgs e)
-       {
-            if (String.IsNullOrEmpty(cmbx_HalconScriptName.Text))
-                return;
-            CompactDB.GetAllTableNames();
-            if(!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
-                CompactDB.CreateKeyValueTable(App.HalconScriptTableName);
-            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
-                UploadHalconScript(CompactDB, App.HalconScriptTableName);
-       }
 
-       private void btn_DownloadScript_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(cmbx_HalconScriptName.Text))
-                return;
-             CompactDB.GetAllTableNames();
-            if (!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
-            {
-                dotNetLab.Vision.Halcon.Tipper.Info = "没有任何脚本可供下载";
-                return;
-            }
-            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
-                DownloadHalconScript(CompactDB, App.HalconScriptTableName);
-        }
     }
 }
