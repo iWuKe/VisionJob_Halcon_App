@@ -6,7 +6,7 @@ using System.Text;
 
 namespace shikii.VisionJob
 {
-   public  class TCPNetConnectForm : dotNetLab.Common.ModernUI.SessionPage
+    public class TCPNetConnectForm : dotNetLab.Common.ModernUI.SessionPage
     {
         readonly string TCPTABLENAME = "TCP";
         readonly string SERIALPORTTABLENAME = "SerialPort";
@@ -15,7 +15,7 @@ namespace shikii.VisionJob
         {
             base.prepareCtrls();
             InitializeComponent();
-            
+
         }
         protected override void prepareAppearance()
         {
@@ -27,7 +27,7 @@ namespace shikii.VisionJob
         {
             base.prepareData();
             CompactDB.GetAllTableNames();
-           if(! CompactDB.AllTableNames.Contains(TCPTABLENAME))
+            if (!CompactDB.AllTableNames.Contains(TCPTABLENAME))
             {
                 CompactDB.CreateKeyValueTable(TCPTABLENAME);
             }
@@ -36,18 +36,18 @@ namespace shikii.VisionJob
                 CompactDB.CreateKeyValueTable(SERIALPORTTABLENAME);
             }
             CompactDB.TargetTable = TCPTABLENAME;
-            List<String> lst = CompactDB.GetNameColumnValues( CompactDB.TargetTable);
-            
+            List<String> lst = CompactDB.GetNameColumnValues(CompactDB.TargetTable);
+
             if (!lst.Contains("IP"))
             {
                 CompactDB.Write("IP", "127.0.0.1");
             }
-             
+
             if (!lst.Contains("Port"))
             {
                 CompactDB.Write("Port", "8040");
             }
-            if(!lst.Contains("LoopGapTime"))
+            if (!lst.Contains("LoopGapTime"))
             {
                 CompactDB.Write("LoopGapTime", "100");
             }
@@ -79,7 +79,7 @@ namespace shikii.VisionJob
             {
                 CompactDB.Write("Parity", "0");
             }
-            
+
 
         }
         private void InitializeComponent()
@@ -872,6 +872,6 @@ namespace shikii.VisionJob
         private dotNetLab.Widgets.MobileTextBox txb_DataBits;
         private dotNetLab.Widgets.TextBlock textBlock7;
 
-         
+
     }
 }
