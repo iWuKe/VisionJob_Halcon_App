@@ -28,7 +28,7 @@ namespace shikii.VisionJob
             base.prepareCtrls();
             InitializeComponent();
        }
-       // To do
+       // To do 运行单一工位
        private void btn_RunSingleGongWei_Click(object sender, EventArgs e)
        {
 
