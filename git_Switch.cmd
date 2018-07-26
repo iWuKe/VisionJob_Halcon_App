@@ -1,0 +1,1 @@
+tortoisegitproc /command:switch
