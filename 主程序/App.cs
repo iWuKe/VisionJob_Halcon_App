@@ -13,7 +13,8 @@ namespace shikii.VisionJob
            WinFormApp.BegineInvokeApp();
            DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
            MainForm frm = new MainForm() ;
-           WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
+            WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
+          //  WinFormApp.EndInvokeApp(new Form1());
            //这是Master 测试标记
        }
     }
