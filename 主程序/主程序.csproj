@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="External\CodeEngine.cs" />
+    <Compile Include="FifoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
