@@ -17,14 +17,11 @@ namespace shikii.VisionJob
 {
     public partial class MainForm : dotNetLab.Common.ModernUI.PageBase
     {
-        private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
-        private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;
-        private dotNetLab.Widgets.ColorDecorator colorDecorator1;
-        public dotNetLab.Widgets.MobileListBox mobileListBox1;
-        private dotNetLab.Widgets.Direction btn_More;
-        TCPFactoryServer factoryServer;
         
-         //  Canvas[] cnvs;
+        TCPFactoryServer factoryServer;
+     public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;
+
+        //  Canvas[] cnvs;
         //  Canvas cnvs;
         protected override void prepareData()
         {
@@ -44,6 +41,7 @@ namespace shikii.VisionJob
         {
             base.prepareCtrls();
             InitializeComponent();
+            DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
             //cnvs = new Canvas();
             //如果是数组
             //cnvs = new Canvas[n];
@@ -56,7 +54,7 @@ namespace shikii.VisionJob
             //如果是数组
             //App.thisPowerSuite = this.PrepareToolBlockPowerSuitEx(CompactDB.FetchValue("Current_Project"), cnvs);
             //to do 添加窗体数量
-            //App.DspWndLayoutManager.PrepareDspWnds(typeof(CogRecordDisplay), this.canvasPanel1, 1);
+            // DspWndLayoutManager.PrepareDspWnds(typeof(CogRecordDisplay), this.canvasPanel1, 1);
         }
         protected override void prepareEvents()
         {
@@ -125,6 +123,13 @@ namespace shikii.VisionJob
         {
             AppManager.ShowFixedPage(typeof(MenuForm));
         }
+
+
+        private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
+        private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;
+        private dotNetLab.Widgets.ColorDecorator colorDecorator1;
+        public dotNetLab.Widgets.MobileListBox mobileListBox1;
+        private dotNetLab.Widgets.Direction btn_More;
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));

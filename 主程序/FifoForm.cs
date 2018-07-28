@@ -11,14 +11,44 @@ namespace shikii.VisionJob
         public System.Windows.Forms.ComboBox comboBox1;
         public dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;
         public dotNetLab.Widgets.TextBlock textBlock1;
-
+        public dotNetLab.Vision.DspWndLayout DspWndLayoutManager;
+        public Dictionary<String, Object> dct_Fifos;
         protected override void prepareCtrls()
         {
             base.prepareCtrls();
             InitializeComponent();
+            dct_Fifos = new Dictionary<string, object>();
+            DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
+            ArrangeDspWnds();
             AttachFifoTool();
             BindLiveDeviceNames();
         }
+      
+        private void ArrangeDspWnds()
+        {
+            
+        }
+        protected void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LiveDisplay(comboBox1.Text);
+        }
+
+        public void AttachFifoTool()
+        {
+
+        }
+
+        public void BindLiveDeviceNames()
+        {
+
+        }
+
+        public void LiveDisplay(string str)
+        {
+
+        }
+
+
         private void InitializeComponent()
         {
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
@@ -109,23 +139,6 @@ namespace shikii.VisionJob
 
         }
 
-        protected void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LiveDisplay(comboBox1.Text);
-        }
-
-        public void AttachFifoTool() 
-        {
-
-        }
-
-        public void BindLiveDeviceNames()
-        {
-
-        }
-
-        public void LiveDisplay(string str)
-        {
-        }
+    
     }
 }

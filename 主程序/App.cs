@@ -6,16 +6,15 @@ namespace shikii.VisionJob
    public class App
     {
        public static dotNetLab.Debug.CodeEngine codeEngine;
-       public static dotNetLab.Vision.DspWndLayout DspWndLayoutManager;
+      
        [STAThread]
        static void Main()
        {
            WinFormApp.BegineInvokeApp();
-           DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
            MainForm frm = new MainForm() ;
             WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
-          //  WinFormApp.EndInvokeApp(new Form1());
-           //这是Master 测试标记
+         
+         
        }
     }
 }
