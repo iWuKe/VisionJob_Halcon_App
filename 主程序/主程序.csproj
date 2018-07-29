@@ -44,19 +44,19 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="External\CodeEngine.cs" />
-    <Compile Include="FifoForm.cs">
+    <Compile Include="取相\FifoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManualForm.cs">
+    <Compile Include="手动操作\ManualForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="菜单\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatternForm.cs">
+    <Compile Include="模板\PatternForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,10 +65,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Res.resx</DependentUpon>
     </Compile>
-    <Compile Include="RetriveLogForm.cs">
+    <Compile Include="日志\RetriveLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetriveLogForm.Designer.cs">
+    <Compile Include="日志\RetriveLogForm.Designer.cs">
       <DependentUpon>RetriveLogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="显示窗口布局\Dsp_Wnds\Dsp_1.cs">
@@ -124,10 +124,10 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="菜单\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatternForm.resx">
+    <EmbeddedResource Include="模板\PatternForm.resx">
       <DependentUpon>PatternForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Res.resx">
