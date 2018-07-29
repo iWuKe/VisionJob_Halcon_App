@@ -8,36 +8,48 @@ namespace shikii.VisionJob.通讯
 {
    public class TCPFactoryClient : TCPClient
     {
-        
+        readonly string TCPTABLENAME = "TCP";
         // For Decoding Hex String
         byte[] byt_Arr = null;
         public TCPFactoryClient()
         {
             byt_Arr = new byte[256];
             this.TextEncode = Encoding.ASCII;
+            try
+            {
+                R.CompactDB.GetAllTableNames();
+                if (!R.CompactDB.AllTableNames.Contains(TCPTABLENAME))
+                {
+                    R.CompactDB.CreateKeyValueTable(TCPTABLENAME);
+                }
+                R.CompactDB.TargetTable = TCPTABLENAME;
+                List<String> lst = R.CompactDB.GetNameColumnValues(R.CompactDB.TargetTable);
+                if (lst.Count == 0)
+                {
+                    R.Pipe.Error("读取网络配置时失败，将增加新记录");
+                }
+                if (!lst.Contains("Port"))
+                {
+                    R.CompactDB.Write("Port", "8040");
+                }
+                if (!lst.Contains("LoopGapTime"))
+                {
+                    R.CompactDB.Write("LoopGapTime", "500");
+                }
+                if (!lst.Contains("IP"))
+                {
+                    R.CompactDB.Write("IP", "127.0.0.1");
+                }
+                Port = int.Parse(R.CompactDB.FetchValue("Port"));
+                LoopGapTime = int.Parse(R.CompactDB.FetchValue("LoopGapTime"));
+                IP = R.CompactDB.FetchValue("IP");
+                R.CompactDB.TargetTable = R.CompactDB.DefaultTable;
 
-            R.CompactDB.GetAllTableNames();
+            }
+            catch (Exception ex)
+            {
 
-            List<String> lst = R.CompactDB.GetNameColumnValues(R.CompactDB.DefaultTable);
-            if (lst.Count == 0)
-            {
-                R.Pipe.Error("读取网络配置时失败，将增加新记录");
             }
-            if (!lst.Contains("Port"))
-            {
-                R.CompactDB.Write("Port", "8040");
-            }
-            if (!lst.Contains("LoopGapTime"))
-            {
-                R.CompactDB.Write("LoopGapTime", "500");
-            }
-            if (!lst.Contains("IP"))
-            {
-                R.CompactDB.Write("IP", "127.0.0.1");
-            }
-            Port = int.Parse(R.CompactDB.FetchValue("Port"));
-            LoopGapTime = int.Parse(R.CompactDB.FetchValue("LoopGapTime"));
-            IP = R.CompactDB.FetchValue("IP");
 
         }
         public bool Send_Mill( byte[] byt_Content)
