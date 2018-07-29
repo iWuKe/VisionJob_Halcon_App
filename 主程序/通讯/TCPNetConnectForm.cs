@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dotNetLab.Common;
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace shikii.VisionJob
     {
         readonly string TCPTABLENAME = "TCP";
         readonly string SERIALPORTTABLENAME = "SerialPort";
-
+    
         protected override void prepareCtrls()
         {
             base.prepareCtrls();
@@ -79,7 +80,7 @@ namespace shikii.VisionJob
             {
                 CompactDB.Write("Parity", "0");
             }
-
+            R.CompactDB.TargetTable = R.CompactDB.DefaultTable;
 
         }
         private void InitializeComponent()
