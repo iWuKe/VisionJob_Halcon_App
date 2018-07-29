@@ -1,6 +1,7 @@
 ﻿//using Cognex.VisionPro.ToolBlock;
 //using dotNetLab.Vision.VPro;
 using dotNetLab.Common;
+using dotNetLab.Widgets;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -697,10 +698,9 @@ namespace shikii.VisionJob
         {
             AppManager.ShowPage(typeof(ManualForm));
         }
-
         private void lnk_UseDataCenter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AppManager.ShowPage(typeof(dotNetLab.Widgets.DBEngineManagePage));
+            AppManager.ShowCompactDBEditor();
         }
     }
 }

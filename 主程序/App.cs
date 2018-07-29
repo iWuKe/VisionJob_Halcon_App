@@ -17,7 +17,7 @@ namespace shikii.VisionJob
            HalconEngineManager = new Dictionary<string, HalconEnginePowerSuite>();
            WinFormApp.BegineInvokeApp();
            MainForm frm = new MainForm() ;
-            WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
+           WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
          
          
        }
