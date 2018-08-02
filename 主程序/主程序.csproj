@@ -124,6 +124,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="日志\RetriveLogForm.resx">
+      <DependentUpon>RetriveLogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="菜单\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dotNetLab.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,14 @@ namespace shikii.VisionJob
         public RetriveLogForm()
         {
             InitializeComponent();
+            this.KeyDown += (sender, e) =>
+             {
+                 if(e.KeyData == (Keys.Control|Keys.Q))
+                 {
+                     AppManager.ShowCompactDBEditor("Log.mdf");
+                 }
+             };
+
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -65,6 +74,9 @@ namespace shikii.VisionJob
             }
         }
 
-       
+        private void lnk_ExportExecel_Clicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PortableOffice.ExportToExcel(this.dataGridView1);
+        }
     }
 }
