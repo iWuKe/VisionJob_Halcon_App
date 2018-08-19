@@ -1,15 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "主程序", "主程序\主程序.csproj", "{51547E55-B658-4AB7-95C1-082D33A5F933}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "测试用_控制台", "测试用_控制台\测试用_控制台.csproj", "{38DE9650-F978-4A99-BEBA-B6AC4103850D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "测试用_WinForm窗体", "测试用_WinForm窗体\测试用_WinForm窗体.csproj", "{1938C27E-0BE5-48B5-866D-F411ACD11328}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "调试助手", "调试助手\调试助手.csproj", "{56CA661C-C776-498C-B270-E973528E1415}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "主程序外部接口", "主程序外部接口\主程序外部接口.csproj", "{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetLab", "..\Shikii_New_App_Framework\界面\dotNetLab\dotNetLab.csproj", "{BC982388-B669-48CF-8F9A-A9DAC94BFFFD}"
 EndProject
@@ -63,26 +61,6 @@ Global
 		{1938C27E-0BE5-48B5-866D-F411ACD11328}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1938C27E-0BE5-48B5-866D-F411ACD11328}.Release|x86.ActiveCfg = Release|x86
 		{1938C27E-0BE5-48B5-866D-F411ACD11328}.Release|x86.Build.0 = Release|x86
-		{56CA661C-C776-498C-B270-E973528E1415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{56CA661C-C776-498C-B270-E973528E1415}.Release|x86.ActiveCfg = Release|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D40F2FD8-66EF-46E5-BEAB-ADEFDBDFB18D}.Release|x86.ActiveCfg = Release|Any CPU
 		{BC982388-B669-48CF-8F9A-A9DAC94BFFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC982388-B669-48CF-8F9A-A9DAC94BFFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC982388-B669-48CF-8F9A-A9DAC94BFFFD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -118,10 +96,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{38DE9650-F978-4A99-BEBA-B6AC4103850D} = {3257FCE3-C191-43FE-9A72-E64F3AF4F34C}
+		{1938C27E-0BE5-48B5-866D-F411ACD11328} = {3257FCE3-C191-43FE-9A72-E64F3AF4F34C}
 		{BC982388-B669-48CF-8F9A-A9DAC94BFFFD} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{203DBCC1-7FE8-489F-9204-0D01F6CA0A18} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
-		{1938C27E-0BE5-48B5-866D-F411ACD11328} = {3257FCE3-C191-43FE-9A72-E64F3AF4F34C}
-		{38DE9650-F978-4A99-BEBA-B6AC4103850D} = {3257FCE3-C191-43FE-9A72-E64F3AF4F34C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89BA0D05-3169-4088-B23B-35358CA127D4}
 	EndGlobalSection
 EndGlobal
