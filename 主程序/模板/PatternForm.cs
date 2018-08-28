@@ -19,10 +19,10 @@ namespace shikii.VisionJob
         {
             this.SuspendLayout();
             // 
-            // MoreForm
+            // PatternForm
             // 
-            this.ClientSize = new System.Drawing.Size(634, 406);
-            this.Name = "MoreForm";
+            this.ClientSize = new System.Drawing.Size(634, 545);
+            this.Name = "PatternForm";
             this.ResumeLayout(false);
 
         }

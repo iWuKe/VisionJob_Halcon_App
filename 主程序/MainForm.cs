@@ -159,7 +159,7 @@ namespace shikii.VisionJob
             // 
             // mobileListBox1
             // 
-            this.mobileListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.mobileListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mobileListBox1.BackColor = System.Drawing.Color.Transparent;
             this.mobileListBox1.BorderColor = System.Drawing.Color.Gray;
@@ -211,8 +211,8 @@ namespace shikii.VisionJob
             // 
             // canvasPanel1
             // 
-            this.canvasPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.canvasPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.canvasPanel1.BackColor = System.Drawing.Color.Transparent;
             this.canvasPanel1.BorderColor = System.Drawing.Color.Empty;
@@ -284,7 +284,7 @@ namespace shikii.VisionJob
             this.FontX = new System.Drawing.Font("等线 Light", 30F);
             this.KeyPreview = true;
             this.Name = "MainForm";
-            this.Text = "LED支架检测";
+            this.Text = "视觉检测应用";
             this.TitlePos = new System.Drawing.Point(10, 18);
             this.Controls.SetChildIndex(this.mobileListBox1, 0);
             this.Controls.SetChildIndex(this.lbl_OutputInfo, 0);

@@ -69,10 +69,7 @@ namespace shikii.VisionJob
             }
             catch (Exception)
             {
-
-
-                dotNetLab.Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";
-                    
+                dotNetLab.Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";       
                 return false;
             }
 
