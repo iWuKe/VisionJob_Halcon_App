@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="External\CodeEngine.cs" />
     <Compile Include="取相\FifoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,15 +126,12 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="菜单\MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="模板\PatternForm.resx">
-      <DependentUpon>PatternForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Res.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="手动操作\ManualForm.resx">
+      <DependentUpon>ManualForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_1.resx">
       <DependentUpon>Dsp_1.cs</DependentUpon>
@@ -157,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="显示窗口布局\Dsp_Wnds\Dsp_Base.resx">
       <DependentUpon>Dsp_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模板\PatternForm.resx">
+      <DependentUpon>PatternForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通讯\TCPNetConnectForm.resx">
       <DependentUpon>TCPNetConnectForm.cs</DependentUpon>
@@ -180,6 +179,7 @@
       <Name>dotNetLab</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

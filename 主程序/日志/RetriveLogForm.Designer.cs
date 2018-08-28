@@ -35,6 +35,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btn_Search = new dotNetLab.Widgets.MobileButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lnk_ExportExecel = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,11 +192,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(628, 387);
             this.dataGridView1.TabIndex = 3;
             // 
+            // lnk_ExportExecel
+            // 
+            this.lnk_ExportExecel.AutoSize = true;
+            this.lnk_ExportExecel.Location = new System.Drawing.Point(540, 23);
+            this.lnk_ExportExecel.Name = "lnk_ExportExecel";
+            this.lnk_ExportExecel.Size = new System.Drawing.Size(89, 12);
+            this.lnk_ExportExecel.TabIndex = 4;
+            this.lnk_ExportExecel.TabStop = true;
+            this.lnk_ExportExecel.Text = "导出为Execel表";
+            this.lnk_ExportExecel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_ExportExecel_Clicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(130, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "如果要详细查询请使用快捷键CTRL+Q";
+            // 
             // RetriveLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 489);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lnk_ExportExecel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.dateTimePicker2);
@@ -202,10 +228,12 @@
             this.Controls.Add(this.textBlock3);
             this.Controls.Add(this.textBlock2);
             this.Controls.Add(this.textBlock1);
+            this.KeyPreview = true;
             this.Name = "RetriveLogForm";
             this.Text = "RetriveLogForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,5 +246,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private dotNetLab.Widgets.MobileButton btn_Search;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.LinkLabel lnk_ExportExecel;
+        private System.Windows.Forms.Label label1;
     }
 }

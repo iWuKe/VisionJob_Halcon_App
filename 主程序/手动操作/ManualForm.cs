@@ -32,13 +32,6 @@ namespace shikii.VisionJob
        {
 
        }
-       // To do 运行所有工位
-       private void btn_RunProject_Click(object sender, EventArgs e)
-       {
-
-       }
-       
-        
        private void btn_UploadScript_Click(object sender, EventArgs e)
        {
             try
@@ -133,7 +126,6 @@ namespace shikii.VisionJob
 
         private System.Windows.Forms.ComboBox cmbx_GongWei;
         private dotNetLab.Widgets.MobileButton btn_RunSingleGongWei;
-        private dotNetLab.Widgets.MobileButton btn_RunProject;
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
         private System.Windows.Forms.ComboBox cmbx_HalconScriptName;
         private dotNetLab.Widgets.MobileButton btn_UploadScript;
@@ -145,7 +137,6 @@ namespace shikii.VisionJob
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
             this.cmbx_GongWei = new System.Windows.Forms.ComboBox();
             this.btn_RunSingleGongWei = new dotNetLab.Widgets.MobileButton();
-            this.btn_RunProject = new dotNetLab.Widgets.MobileButton();
             this.colorDecorator1 = new dotNetLab.Widgets.ColorDecorator();
             this.cmbx_HalconScriptName = new System.Windows.Forms.ComboBox();
             this.btn_UploadScript = new dotNetLab.Widgets.MobileButton();
@@ -236,45 +227,6 @@ namespace shikii.VisionJob
             this.btn_RunSingleGongWei.WhereReturn = ((byte)(0));
             this.btn_RunSingleGongWei.Click += new System.EventHandler(this.btn_RunSingleGongWei_Click);
             // 
-            // btn_RunProject
-            // 
-            this.btn_RunProject.BackColor = System.Drawing.Color.Transparent;
-            this.btn_RunProject.BorderColor = System.Drawing.Color.Empty;
-            this.btn_RunProject.BorderThickness = -1;
-            this.btn_RunProject.CornerAligment = dotNetLab.Widgets.Alignments.All;
-            this.btn_RunProject.DataBindingInfo = null;
-            this.btn_RunProject.EnableFlag = false;
-            this.btn_RunProject.EnableMobileRound = true;
-            this.btn_RunProject.EnableTextRenderHint = false;
-            this.btn_RunProject.FlagAlign = dotNetLab.Widgets.Alignments.Left;
-            this.btn_RunProject.FlagColor = System.Drawing.Color.DodgerBlue;
-            this.btn_RunProject.FlagThickness = 5;
-            this.btn_RunProject.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.btn_RunProject.ForeColor = System.Drawing.Color.White;
-            this.btn_RunProject.GapBetweenTextFlag = 10;
-            this.btn_RunProject.GapBetweenTextImage = 8;
-            this.btn_RunProject.IConAlignment = System.Windows.Forms.LeftRightAlignment.Left;
-            this.btn_RunProject.ImageSize = new System.Drawing.Size(0, 0);
-            this.btn_RunProject.LEDStyle = false;
-            this.btn_RunProject.Location = new System.Drawing.Point(98, 155);
-            this.btn_RunProject.MainBindableProperty = "运行所有工位";
-            this.btn_RunProject.Name = "btn_RunProject";
-            this.btn_RunProject.NeedAnimation = true;
-            this.btn_RunProject.NormalColor = System.Drawing.Color.DarkTurquoise;
-            this.btn_RunProject.PressColor = System.Drawing.Color.Cyan;
-            this.btn_RunProject.Radius = 37;
-            this.btn_RunProject.Size = new System.Drawing.Size(475, 38);
-            this.btn_RunProject.Source = null;
-            this.btn_RunProject.TabIndex = 4;
-            this.btn_RunProject.Text = "运行所有工位";
-            this.btn_RunProject.UIElementBinders = null;
-            this.btn_RunProject.UnderLine = false;
-            this.btn_RunProject.UnderLineColor = System.Drawing.Color.DarkGray;
-            this.btn_RunProject.UnderLineThickness = 2F;
-            this.btn_RunProject.Vertical = false;
-            this.btn_RunProject.WhereReturn = ((byte)(0));
-            this.btn_RunProject.Click += new System.EventHandler(this.btn_RunProject_Click);
-            // 
             // colorDecorator1
             // 
             this.colorDecorator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -294,7 +246,7 @@ namespace shikii.VisionJob
             this.cmbx_HalconScriptName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cmbx_HalconScriptName.ForeColor = System.Drawing.Color.White;
             this.cmbx_HalconScriptName.FormattingEnabled = true;
-            this.cmbx_HalconScriptName.Location = new System.Drawing.Point(193, 214);
+            this.cmbx_HalconScriptName.Location = new System.Drawing.Point(193, 168);
             this.cmbx_HalconScriptName.Name = "cmbx_HalconScriptName";
             this.cmbx_HalconScriptName.Size = new System.Drawing.Size(380, 29);
             this.cmbx_HalconScriptName.TabIndex = 2;
@@ -319,7 +271,7 @@ namespace shikii.VisionJob
             this.btn_UploadScript.IConAlignment = System.Windows.Forms.LeftRightAlignment.Left;
             this.btn_UploadScript.ImageSize = new System.Drawing.Size(0, 0);
             this.btn_UploadScript.LEDStyle = false;
-            this.btn_UploadScript.Location = new System.Drawing.Point(354, 270);
+            this.btn_UploadScript.Location = new System.Drawing.Point(354, 224);
             this.btn_UploadScript.MainBindableProperty = "上传脚本";
             this.btn_UploadScript.Name = "btn_UploadScript";
             this.btn_UploadScript.NeedAnimation = true;
@@ -358,7 +310,7 @@ namespace shikii.VisionJob
             this.btn_DownloadScript.IConAlignment = System.Windows.Forms.LeftRightAlignment.Left;
             this.btn_DownloadScript.ImageSize = new System.Drawing.Size(0, 0);
             this.btn_DownloadScript.LEDStyle = false;
-            this.btn_DownloadScript.Location = new System.Drawing.Point(473, 270);
+            this.btn_DownloadScript.Location = new System.Drawing.Point(473, 224);
             this.btn_DownloadScript.MainBindableProperty = "下载脚本";
             this.btn_DownloadScript.Name = "btn_DownloadScript";
             this.btn_DownloadScript.NeedAnimation = true;
@@ -391,7 +343,7 @@ namespace shikii.VisionJob
             this.textBlock2.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.textBlock2.GapBetweenTextFlag = 10;
             this.textBlock2.LEDStyle = false;
-            this.textBlock2.Location = new System.Drawing.Point(66, 218);
+            this.textBlock2.Location = new System.Drawing.Point(66, 172);
             this.textBlock2.MainBindableProperty = "上传下载脚本";
             this.textBlock2.Name = "textBlock2";
             this.textBlock2.Radius = -1;
@@ -410,7 +362,6 @@ namespace shikii.VisionJob
             this.ClientSize = new System.Drawing.Size(644, 500);
             this.ClipboardText = "HalconEngineManager";
             this.Controls.Add(this.colorDecorator1);
-            this.Controls.Add(this.btn_RunProject);
             this.Controls.Add(this.btn_DownloadScript);
             this.Controls.Add(this.btn_UploadScript);
             this.Controls.Add(this.btn_RunSingleGongWei);
@@ -428,7 +379,6 @@ namespace shikii.VisionJob
             this.Controls.SetChildIndex(this.btn_RunSingleGongWei, 0);
             this.Controls.SetChildIndex(this.btn_UploadScript, 0);
             this.Controls.SetChildIndex(this.btn_DownloadScript, 0);
-            this.Controls.SetChildIndex(this.btn_RunProject, 0);
             this.Controls.SetChildIndex(this.colorDecorator1, 0);
             this.ResumeLayout(false);
 

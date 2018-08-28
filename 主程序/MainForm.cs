@@ -84,17 +84,11 @@ namespace shikii.VisionJob
         }
       
         //要使MenuForm 自动清理文本框正常显示请启用下列代码
-        protected void AutoSaveClearImage(Bitmap bmp)
+        protected void AutoSaveClearImage(Bitmap bmp,bool isNG)
         {
             //自动保存及清理图片
             //保存
             List<String> lst = CompactDB.GetNameColumnValues(CompactDB.DefaultTable);
-            if (!lst.Contains("AutoClearTime"))
-            {
-                CompactDB.Write("AutoClearTime", "3");
-            }
-
-
             String picturePath = "图片";
             if (!Directory.Exists("图片"))
             {
@@ -106,18 +100,37 @@ namespace shikii.VisionJob
             {
                 Directory.CreateDirectory(strNowPictureToGo);
             }
-            bmp.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
-            // bmp.Save( DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp");
+            string strNGPictureToGo = String.Format("{0}\\NG",strNowPictureToGo);
+            if(!Directory.Exists(strNGPictureToGo))
+                Directory.CreateDirectory(strNGPictureToGo);
+            string strOKPictureToGo = String.Format("{0}\\OK", strNowPictureToGo);
+            if (!Directory.Exists(strOKPictureToGo))
+                Directory.CreateDirectory(strOKPictureToGo);
+
+            if(isNG)
+            bmp.Save(Path.Combine(strNGPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+            else
+            bmp.Save(Path.Combine(strOKPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+
+
             int nGapDays = CompactDB.FetchIntValue("AutoClearTime");
             DateTime dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(-nGapDays);
             string deletingFolderName = dt.ToString("yyyy-MM-dd");
+
             if (!Directory.Exists(Path.Combine(picturePath, deletingFolderName)))
                 return;
+
             string directoryName = Path.Combine(picturePath, deletingFolderName);
-            String[] strFiles = Directory.GetFiles(directoryName);
-            for (int j = 0; j < strFiles.Length; j++)
+            String[] strDirs_OK_NG = Directory.GetDirectories(directoryName);
+            //
+            for (int j = 0; j < strDirs_OK_NG.Length; j++)
             {
-                File.Delete(strFiles[j]);
+              
+                String[] strFiles = Directory.GetFiles(strDirs_OK_NG[j]);
+                for (int i = 0; i < strFiles.Length; i++)
+                {
+                     File.Delete(strFiles[j]);
+                }
             }
             Directory.Delete(directoryName);
         }
@@ -186,7 +199,7 @@ namespace shikii.VisionJob
             // 
             // mobileListBox1
             // 
-            this.mobileListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.mobileListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mobileListBox1.BackColor = System.Drawing.Color.Transparent;
             this.mobileListBox1.BorderColor = System.Drawing.Color.Gray;
@@ -238,8 +251,8 @@ namespace shikii.VisionJob
             // 
             // canvasPanel1
             // 
-            this.canvasPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.canvasPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.canvasPanel1.BackColor = System.Drawing.Color.Transparent;
             this.canvasPanel1.BorderColor = System.Drawing.Color.Empty;
@@ -311,7 +324,7 @@ namespace shikii.VisionJob
             this.FontX = new System.Drawing.Font("等线 Light", 30F);
             this.KeyPreview = true;
             this.Name = "MainForm";
-            this.Text = "LED支架检测";
+            this.Text = "视觉检测应用";
             this.TitlePos = new System.Drawing.Point(10, 18);
             this.Controls.SetChildIndex(this.mobileListBox1, 0);
             this.Controls.SetChildIndex(this.lbl_OutputInfo, 0);

@@ -16,6 +16,8 @@ namespace shikii.VisionJob
         {
             base.prepareCtrls();
             InitializeComponent();
+            //dotNetLab.Vision.Halcon.Canvas cnv;
+            //cnv.AppendFirstText()
 
         }
         protected override void prepareAppearance()
