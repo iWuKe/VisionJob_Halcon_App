@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using dotNetLab.Common;
 using dotNetLab.Vision.Halcon;
@@ -18,10 +19,18 @@ namespace shikii.VisionJob
        {
             ToolBlockEditSet = new List<ToolBlockEditV2>();
            WinFormApp.BegineInvokeApp();
+        
            MainForm frm = new MainForm() ;
            WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
-         
-         
+
        }
+       
+
+
+        public static String ProjsFolderName = "Projs";
+        public static String OriginProjectPath = "Projs\\0";
+        public static String CurrentProject = "Current_Project";
+        public static String MainCompactDB = "shikii.db";
+       
     }
 }

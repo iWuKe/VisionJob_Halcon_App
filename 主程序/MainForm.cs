@@ -24,7 +24,7 @@ namespace shikii.VisionJob
         protected override void prepareData()
         {
             base.prepareData();
-           
+          
            //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
             
@@ -36,7 +36,23 @@ namespace shikii.VisionJob
             //};
 
         }
-        
+          void CheckProjectFolder()
+        {
+            if (!Directory.Exists(App.ProjsFolderName))
+            {
+                Directory.CreateDirectory(App.ProjsFolderName);
+                if (!Directory.Exists(App.OriginProjectPath))
+                {
+                    Directory.CreateDirectory(App.OriginProjectPath);
+                    String str = CompactDB.FetchValue(App.CurrentProject);
+                    if(String.IsNullOrEmpty(str)||str.Equals("0"))
+                    {
+                        CompactDB.Write(App.CurrentProject,App.OriginProjectPath);
+                    }
+                }
+
+            }
+        }
         private   void ShowCompactDBEditor(String dbFileName = "shikii.db")
         {
             AppManager.ShowCompactDBEditor(dbFileName);
@@ -45,7 +61,7 @@ namespace shikii.VisionJob
         {
             base.prepareCtrls();
             InitializeComponent();
-            
+            CheckProjectFolder();
             DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
            cc:;
              String str = CompactDB.FetchValue("AppName");
