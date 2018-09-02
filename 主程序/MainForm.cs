@@ -5,30 +5,27 @@ using System.Windows.Forms;
 using dotNetLab.Common.ModernUI;
 using dotNetLab.Common;
 using System.Threading;
-//using dotNetLab.Vision.VPro;
-//using Cognex.VisionPro;
-//using Cognex.VisionPro.PMAlign;
-//using Cognex.VisionPro.Blob;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using HalconDotNet;
 using dotNetLab.Vision.Halcon;
+using dotNetLab.Vision.Halcon.Tools;
+using dotNetLab.Widgets;
 
 namespace shikii.VisionJob
 {
     public partial class MainForm : dotNetLab.Common.ModernUI.PageBase
     {
         
-        TCPFactoryServer factoryServer;
+     public  TCPFactoryServer factoryServer;
      public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;
 
-        //  Canvas[] cnvs;
-        //  Canvas cnvs;
         protected override void prepareData()
         {
             base.prepareData();
            
+           //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
             
             //factoryServer.Boot();
@@ -39,24 +36,62 @@ namespace shikii.VisionJob
             //};
 
         }
+        
+        private   void ShowCompactDBEditor(String dbFileName = "shikii.db")
+        {
+            AppManager.ShowCompactDBEditor(dbFileName);
+        }
         protected override void prepareCtrls()
         {
             base.prepareCtrls();
             InitializeComponent();
+            
             DspWndLayoutManager = new dotNetLab.Vision.DspWndLayout();
-            //cnvs = new Canvas();
-            //如果是数组
-            //cnvs = new Canvas[n];
-            //for (int i = 0; i < cnvs.Length; i++)
-            //{
-            //    cnvs[i] = new Canvas();
-            //}
-            //如果不是数组
-            //App.thisPowerSuite = this.PrepareToolBlockPowerSuit(CompactDB.FetchValue("Current_Project"), cnvs);
-            //如果是数组
-            //App.thisPowerSuite = this.PrepareToolBlockPowerSuitEx(CompactDB.FetchValue("Current_Project"), cnvs);
-            //to do 添加窗体数量
-            // DspWndLayoutManager.PrepareDspWnds(typeof(CogRecordDisplay), this.canvasPanel1, 1);
+           cc:;
+             String str = CompactDB.FetchValue("AppName");
+            if(str == null)
+            {
+                CompactDB.Write("AppName","视觉检测应用");
+                goto cc;
+            }
+            this.Text = str;
+            if (-99999 == CompactDB.FetchIntValue("DisplayWndNum"))
+                CompactDB.Write("DisplayWndNum", "1");
+            DspWndLayoutManager.PrepareDspWnds(typeof(MVDisplay), this.canvasPanel1, CompactDB.FetchIntValue("DisplayWndNum"));
+            
+            this.Load += (sender, e) =>
+            {
+                //必须使用这个方法来最大化窗体
+                this.MaxWindow();
+            };
+            PrepareVision();
+           
+        }
+        // to do  准备视觉库（*.shikii）
+        public void PrepareVision()
+        {
+            //使用作业管理器
+           App.job = new JobTool();
+           App.job.DisplayWnds = DspWndLayoutManager.DisplayWnds;
+           App. job.mainFormInvoker.Host = this;
+           App. job.CompactDB.Host = CompactDB;
+           App. job.ConsolePipe.Host = ConsolePipe;
+           App.job.Deserialize();
+
+
+           //手动管理作业
+            //// 得到当前的项目名（路径）
+            // String strShikiiFileDirectory = CompactDB.FetchValue("Current_Project");
+            //// 加载ToolBlock,得到EditV2
+            // App.ToolBlockEditSet.Add(ToolBlock.GetToolBlockEditV2(strShikiiFileDirectory + "\\test.shikii"));
+            // // 与显示窗体进行关联
+            //  ToolBlock thisToolBlock = App.ToolBlockEditSet[0].Subject as ToolBlock;
+            //  thisToolBlock.DisplayAdapter = ((MVDisplay)DspWndLayoutManager.DisplayWnds[0]).adapter;
+            //// 传出数据库及输出信息类对象
+            //  thisToolBlock.CompactDB.DBObject = CompactDB;
+            // thisToolBlock.ConsolePipe.ConsolePipe = ConsolePipe;
+
+
         }
         protected override void prepareEvents()
         {
@@ -75,16 +110,15 @@ namespace shikii.VisionJob
         {
             if (e.KeyData == (Keys.Control | Keys.S))
             {
-               // MainCheckLEDSupporting();
+                       
             }
             if (e.KeyData == (Keys.Control | Keys.C))
             {
                 this.mobileListBox1.Items.Clear();
             }
         }
-      
-        //要使MenuForm 自动清理文本框正常显示请启用下列代码
-        protected void AutoSaveClearImage(Bitmap bmp,bool isNG)
+       
+        public void AutoSaveClearImage(HImage bmp,bool isNG)
         {
             //自动保存及清理图片
             //保存
@@ -134,50 +168,25 @@ namespace shikii.VisionJob
             }
             Directory.Delete(directoryName);
         }
-
-        protected void AutoSaveClearImage(HImage image)
+        #region  Extentsion
+        public Object GetTCPFactoryServer()
         {
-            //自动保存及清理图片
-            //保存
-            List<String> lst = CompactDB.GetNameColumnValues(CompactDB.DefaultTable);
-            if (!lst.Contains("AutoClearTime"))
-            {
-                CompactDB.Write("AutoClearTime", "3");
-            }
-
-
-            String picturePath = "图片";
-            if (!Directory.Exists("图片"))
-            {
-                Directory.CreateDirectory(picturePath);
-            }
-            //当前图片保存到哪个位置
-            String strNowPictureToGo = String.Format("图片\\{0}", DateTime.Now.ToString("yyyy-MM-dd"));
-            if (!Directory.Exists(strNowPictureToGo))
-            {
-                Directory.CreateDirectory(strNowPictureToGo);
-            }
-             image.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
-            // bmp.Save( DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp");
-            int nGapDays = CompactDB.FetchIntValue("AutoClearTime");
-            DateTime dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(-nGapDays);
-            string deletingFolderName = dt.ToString("yyyy-MM-dd");
-            if (!Directory.Exists(Path.Combine(picturePath, deletingFolderName)))
-                return;
-            string directoryName = Path.Combine(picturePath, deletingFolderName);
-            String[] strFiles = Directory.GetFiles(directoryName);
-            for (int j = 0; j < strFiles.Length; j++)
-            {
-                File.Delete(strFiles[j]);
-            }
-            Directory.Delete(directoryName);
+            return new TCPFactoryServer();
         }
+        public Object GetTCPFactoryClient()
+        {
+            return new TCPFactoryClient();
+        }
+        public void ClearLogWindow()
+        {
+            this.mobileListBox1.Items.Clear();
+        }
+        #endregion
+
         private void btn_More_Click(object sender, EventArgs e)
         {
             AppManager.ShowFixedPage(typeof(MenuForm));
         }
-
-
         private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
         private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
@@ -336,3 +345,46 @@ namespace shikii.VisionJob
         }
     }
 }
+
+/*
+         // image.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+        protected void AutoSaveClearImage(HImage image)
+        {
+            //自动保存及清理图片
+            //保存
+            List<String> lst = CompactDB.GetNameColumnValues(CompactDB.DefaultTable);
+            if (!lst.Contains("AutoClearTime"))
+            {
+                CompactDB.Write("AutoClearTime", "3");
+            }
+
+
+            String picturePath = "图片";
+            if (!Directory.Exists("图片"))
+            {
+                Directory.CreateDirectory(picturePath);
+            }
+            //当前图片保存到哪个位置
+            String strNowPictureToGo = String.Format("图片\\{0}", DateTime.Now.ToString("yyyy-MM-dd"));
+            if (!Directory.Exists(strNowPictureToGo))
+            {
+                Directory.CreateDirectory(strNowPictureToGo);
+            }
+             image.Save(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+            //actSaveBmp(Path.Combine(strNowPictureToGo, DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp"));
+            // bmp.Save( DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss") + ".bmp");
+            int nGapDays = CompactDB.FetchIntValue("AutoClearTime");
+            DateTime dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd")).AddDays(-nGapDays);
+            string deletingFolderName = dt.ToString("yyyy-MM-dd");
+            if (!Directory.Exists(Path.Combine(picturePath, deletingFolderName)))
+                return;
+            string directoryName = Path.Combine(picturePath, deletingFolderName);
+            String[] strFiles = Directory.GetFiles(directoryName);
+            for (int j = 0; j < strFiles.Length; j++)
+            {
+                File.Delete(strFiles[j]);
+            }
+            Directory.Delete(directoryName);
+        }
+     
+     */

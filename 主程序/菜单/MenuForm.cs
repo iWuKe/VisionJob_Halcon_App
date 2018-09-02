@@ -1,5 +1,5 @@
-﻿//using Cognex.VisionPro.ToolBlock;
-//using dotNetLab.Vision.VPro;
+﻿
+
 using dotNetLab.Common;
 using dotNetLab.Widgets;
 using System;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using dotNetLab.Vision.Halcon.Tools;
 
 namespace shikii.VisionJob
 {
@@ -39,7 +40,7 @@ namespace shikii.VisionJob
                 strArr[i] = Path.GetFileNameWithoutExtension(strArr[i]);
             }
             this.cmbx_CurrentProjectName.Items.AddRange(strArr);
-            cmbx_CurrentProjectName.Text = Path.GetFileNameWithoutExtension(Path.GetDirectoryName(CompactDB.FetchValue("Current_Project")));
+            cmbx_CurrentProjectName.Text = Path.GetFileNameWithoutExtension(CompactDB.FetchValue("Current_Project"));
             cmbx_DeleteProject.Items.AddRange(strArr);
             cmbx_NewProjectBaseOnWhichProject.Items.AddRange(strArr);
             cmbx_NewProjectBaseOnWhichProject.Text = cmbx_CurrentProjectName.Text;
@@ -115,34 +116,41 @@ namespace shikii.VisionJob
                 }
                 PrepareProjsUI();
             };
+
+            //to do 切换项目,务必重写此方法
+            //！ 注意务必使用ToolBlockEditV2.LoadShikii 来重新载入shikii
             cmbx_CurrentProjectName.SelectedIndexChanged += (s, e) =>
             {
                 String strPath = String.Format("Projs\\{0}", cmbx_CurrentProjectName.Text);
-               //to do 切换项目
+                CompactDB.Write("Current_Project", strPath);
                 // strPath =Path.Combine( Path.GetDirectoryName(Application.ExecutablePath),strPath);
-              //  String strFilePath = Directory.GetFiles(strPath, "*.vpp")[0];
+                //使用作业管理器来切换项目
+                App.job.Deserialize();
 
-               // CompactDB.Write("Current_Project", strFilePath);
 
-              //  App.thisPowerSuite.ThisToolBlock = ToolBlockPowerSuite.LoadVpp<CogToolBlock>(strFilePath);
 
             };
         }
 
 
-
+        //to do 训练模板
         private void lnk_TrainPattern_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PatternForm frm = new PatternForm();
-           //to do 训练模板
-          //  frm.PrepareToolBlockEditor(frm.editDapter, App.thisPowerSuite.ThisToolBlock, App.thisPowerSuite.ThisToolBlock, CompactDB.FetchValue("Current_Project"));
-            //Localize lc = new Localize();
-            //lc.LocalizeToolBlock(frm.editDapter.toolBox);
+            frm.Text = "作业管理器";
+            JobToolEditV2 editV2 = new JobToolEditV2();
+            editV2.Subject = App.job;
+            editV2.Dock = DockStyle.Fill;
+            frm.Size = new System.Drawing.Size(editV2.Width + 20, editV2.Height + 20);
+
+            frm.Controls.Add(editV2);
             frm.FormClosed += (s, ex) =>
             {
+
                 frm.Dispose();
             };
             frm.Show();
+
 
         }
         private void lnk_RetriveLogs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -159,8 +167,14 @@ namespace shikii.VisionJob
         {
             AppManager.ShowPage(typeof(TCPNetConnectForm));
         }
-
-
+        private void lnk_ManualRun_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AppManager.ShowPage(typeof(ManualForm));
+        }
+        private void lnk_UseDataCenter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AppManager.ShowCompactDBEditor();
+        }
         private dotNetLab.Widgets.Card card2;
         private LinkLabel lnk_TrainPattern;
         private dotNetLab.Widgets.TextBlock textBlock2;
@@ -185,10 +199,11 @@ namespace shikii.VisionJob
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
         private void InitializeComponent()
         {
-            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo2 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
+            dotNetLab.Widgets.UIBinding.UIElementBinderInfo uiElementBinderInfo1 = new dotNetLab.Widgets.UIBinding.UIElementBinderInfo();
             this.mobileTextBox4 = new dotNetLab.Widgets.MobileTextBox();
             this.colorDecorator1 = new dotNetLab.Widgets.ColorDecorator();
             this.card2 = new dotNetLab.Widgets.Card();
+            this.lnk_UseDataCenter = new System.Windows.Forms.LinkLabel();
             this.lnk_ManualRun = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -207,7 +222,6 @@ namespace shikii.VisionJob
             this.textBlock4 = new dotNetLab.Widgets.TextBlock();
             this.textBlock3 = new dotNetLab.Widgets.TextBlock();
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
-            this.lnk_UseDataCenter = new System.Windows.Forms.LinkLabel();
             this.card2.SuspendLayout();
             this.card1.SuspendLayout();
             this.SuspendLayout();
@@ -216,16 +230,16 @@ namespace shikii.VisionJob
             // 
             this.mobileTextBox4.ActiveColor = System.Drawing.Color.Cyan;
             this.mobileTextBox4.BackColor = System.Drawing.Color.Transparent;
-            uiElementBinderInfo2.DBEngineIndex = 0;
-            uiElementBinderInfo2.EnableCheckBox_One_Zero = false;
-            uiElementBinderInfo2.FieldName = "Val";
-            uiElementBinderInfo2.Filter = "Name=\'AutoClearTime\' ";
-            uiElementBinderInfo2.Ptr = null;
-            uiElementBinderInfo2.StoreInDB = true;
-            uiElementBinderInfo2.StoreIntoDBRealTime = true;
-            uiElementBinderInfo2.TableName = "App_Extension_Data_Table";
-            uiElementBinderInfo2.ThisControl = this.mobileTextBox4;
-            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo2;
+            uiElementBinderInfo1.DBEngineIndex = 0;
+            uiElementBinderInfo1.EnableCheckBox_One_Zero = false;
+            uiElementBinderInfo1.FieldName = "Val";
+            uiElementBinderInfo1.Filter = "Name=\'AutoClearTime\' ";
+            uiElementBinderInfo1.Ptr = null;
+            uiElementBinderInfo1.StoreInDB = true;
+            uiElementBinderInfo1.StoreIntoDBRealTime = true;
+            uiElementBinderInfo1.TableName = "App_Extension_Data_Table";
+            uiElementBinderInfo1.ThisControl = this.mobileTextBox4;
+            this.mobileTextBox4.DataBindingInfo = uiElementBinderInfo1;
             this.mobileTextBox4.DoubleValue = double.NaN;
             this.mobileTextBox4.EnableMobileRound = true;
             this.mobileTextBox4.EnableNullValue = false;
@@ -293,6 +307,17 @@ namespace shikii.VisionJob
             this.card2.Text = "card1";
             this.card2.UIElementBinders = null;
             // 
+            // lnk_UseDataCenter
+            // 
+            this.lnk_UseDataCenter.AutoSize = true;
+            this.lnk_UseDataCenter.Location = new System.Drawing.Point(63, 226);
+            this.lnk_UseDataCenter.Name = "lnk_UseDataCenter";
+            this.lnk_UseDataCenter.Size = new System.Drawing.Size(99, 20);
+            this.lnk_UseDataCenter.TabIndex = 5;
+            this.lnk_UseDataCenter.TabStop = true;
+            this.lnk_UseDataCenter.Text = "使用数据中心";
+            this.lnk_UseDataCenter.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_UseDataCenter_LinkClicked);
+            // 
             // lnk_ManualRun
             // 
             this.lnk_ManualRun.AutoSize = true;
@@ -352,7 +377,7 @@ namespace shikii.VisionJob
             this.lnk_TrainPattern.Size = new System.Drawing.Size(69, 20);
             this.lnk_TrainPattern.TabIndex = 1;
             this.lnk_TrainPattern.TabStop = true;
-            this.lnk_TrainPattern.Text = "训练模板";
+            this.lnk_TrainPattern.Text = "作业管理";
             this.lnk_TrainPattern.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_TrainPattern_LinkClicked);
             // 
             // textBlock2
@@ -658,17 +683,6 @@ namespace shikii.VisionJob
             this.textBlock1.Vertical = false;
             this.textBlock1.WhereReturn = ((byte)(0));
             // 
-            // lnk_UseDataCenter
-            // 
-            this.lnk_UseDataCenter.AutoSize = true;
-            this.lnk_UseDataCenter.Location = new System.Drawing.Point(63, 226);
-            this.lnk_UseDataCenter.Name = "lnk_UseDataCenter";
-            this.lnk_UseDataCenter.Size = new System.Drawing.Size(99, 20);
-            this.lnk_UseDataCenter.TabIndex = 5;
-            this.lnk_UseDataCenter.TabStop = true;
-            this.lnk_UseDataCenter.Text = "使用数据中心";
-            this.lnk_UseDataCenter.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_UseDataCenter_LinkClicked);
-            // 
             // MenuForm
             // 
             this.ClientSize = new System.Drawing.Size(600, 500);
@@ -689,18 +703,8 @@ namespace shikii.VisionJob
 
         }
 
-        private void textBlock7_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         
-        private void lnk_ManualRun_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AppManager.ShowPage(typeof(ManualForm));
-        }
-        private void lnk_UseDataCenter_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AppManager.ShowCompactDBEditor();
-        }
+     
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using dotNetLab.Common.ModernUI;
-using dotNetLab.Vision.Halcon;
+ 
 
 namespace shikii.VisionJob
 {
@@ -27,97 +27,97 @@ namespace shikii.VisionJob
             base.prepareCtrls();
             InitializeComponent();
        }
-       // To do 运行单一工位
+       // To do 运行单一工位，需要预定义下拉列表中的数据
        private void btn_RunSingleGongWei_Click(object sender, EventArgs e)
        {
 
        }
        private void btn_UploadScript_Click(object sender, EventArgs e)
        {
-            try
-            {
+            //try
+            //{
 
-            CompactDB.GetAllTableNames();
-            if(!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
-                CompactDB.CreateKeyValueTable(App.HalconScriptTableName);
-            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
-                UploadHalconScript(CompactDB, App.HalconScriptTableName);
-            }
-            catch (Exception ex)
-            {
+            //CompactDB.GetAllTableNames();
+            //if(!CompactDB.AllTableNames.Contains(App.HalconScriptTableName))
+            //    CompactDB.CreateKeyValueTable(App.HalconScriptTableName);
+            //App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+            //    UploadHalconScript(CompactDB, App.HalconScriptTableName);
+            //}
+            //catch (Exception ex)
+            //{
                  
-               DialogResult dlt   = MessageBox.Show("是否需要绕过特定引擎上传一个脚本文件？", "询问",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if(dlt == DialogResult.OK)
-                {
-                    Form form = new Form();
-                    form.Size = new System.Drawing.Size(200, 150);
-                    form.Text = "Procedure Name";
-                    form.StartPosition = FormStartPosition.CenterScreen;
-                    form.BackColor = System.Drawing.Color.Beige;
-                    TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
-                    txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
-                    txb.KeyUp += (s , exx) =>
-                     {
-                         if(exx.KeyCode == Keys.Enter)
-                         {
-                             form.Close();
-                         }
-                     };
-                    form.Controls.Add(txb);
-                    form.ShowDialog();
-                    String ProcedureName = txb.Text.Trim();
-                    string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    String filePath = Path.Combine(strDesktopPath, ProcedureName + ".xml");
-                    String Content = File.ReadAllText(filePath, Encoding.Default);
-                    CompactDB.Write(App.HalconScriptTableName, ProcedureName, Content);
-                    form.Dispose();
-                }
-            }
+            //   DialogResult dlt   = MessageBox.Show("是否需要绕过特定引擎上传一个脚本文件？", "询问",
+            //        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //    if(dlt == DialogResult.OK)
+            //    {
+            //        Form form = new Form();
+            //        form.Size = new System.Drawing.Size(200, 150);
+            //        form.Text = "Procedure Name";
+            //        form.StartPosition = FormStartPosition.CenterScreen;
+            //        form.BackColor = System.Drawing.Color.Beige;
+            //        TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
+            //        txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
+            //        txb.KeyUp += (s , exx) =>
+            //         {
+            //             if(exx.KeyCode == Keys.Enter)
+            //             {
+            //                 form.Close();
+            //             }
+            //         };
+            //        form.Controls.Add(txb);
+            //        form.ShowDialog();
+            //        String ProcedureName = txb.Text.Trim();
+            //        string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //        String filePath = Path.Combine(strDesktopPath, ProcedureName + ".xml");
+            //        String Content = File.ReadAllText(filePath, Encoding.Default);
+            //        CompactDB.Write(App.HalconScriptTableName, ProcedureName, Content);
+            //        form.Dispose();
+            //    }
+            //}
        }
 
        private void btn_DownloadScript_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-            App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
-                DownloadHalconScript(CompactDB, App.HalconScriptTableName);
+            //try
+            //{
+            //App.HalconEngineManager[cmbx_HalconScriptName.Text.Trim()].
+            //    DownloadHalconScript(CompactDB, App.HalconScriptTableName);
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                DialogResult dlt = MessageBox.Show("是否需要绕过特定引擎下载一个脚本文件？", "询问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //    DialogResult dlt = MessageBox.Show("是否需要绕过特定引擎下载一个脚本文件？", "询问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                
                    
-                if (dlt == DialogResult.OK)
-                {
-                    Form form = new Form();
-                    form.Size = new System.Drawing.Size(200, 150);
-                    form.Text = "Procedure Name";
-                    form.StartPosition = FormStartPosition.CenterScreen;
-                    form.BackColor = System.Drawing.Color.Beige;
-                    TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
-                    txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
-                    txb.KeyUp += (s, exx) =>
-                    {
-                        if (exx.KeyCode == Keys.Enter)
-                        {
-                            form.Close();
-                        }
-                    };
-                    form.Controls.Add(txb);
-                    form.ShowDialog();
-                    String ProcedureName = txb.Text.Trim();
-                    string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    String strContent = CompactDB.FetchValue(ProcedureName, App.HalconScriptTableName);
-                    File.WriteAllText(Path.Combine(strDesktopPath, ProcedureName + ".xml")
-                            , strContent, Encoding.Default);
-                    form.Dispose();
-                }
-            }
+            //    if (dlt == DialogResult.OK)
+            //    {
+            //        Form form = new Form();
+            //        form.Size = new System.Drawing.Size(200, 150);
+            //        form.Text = "Procedure Name";
+            //        form.StartPosition = FormStartPosition.CenterScreen;
+            //        form.BackColor = System.Drawing.Color.Beige;
+            //        TextBox txb = new TextBox(); txb.Font = new System.Drawing.Font("微软雅黑", 11);
+            //        txb.Location = new System.Drawing.Point(form.Width / 2 - txb.Width / 2, form.Height / 2 - txb.Height / 2);
+            //        txb.KeyUp += (s, exx) =>
+            //        {
+            //            if (exx.KeyCode == Keys.Enter)
+            //            {
+            //                form.Close();
+            //            }
+            //        };
+            //        form.Controls.Add(txb);
+            //        form.ShowDialog();
+            //        String ProcedureName = txb.Text.Trim();
+            //        string strDesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //        String strContent = CompactDB.FetchValue(ProcedureName, App.HalconScriptTableName);
+            //        File.WriteAllText(Path.Combine(strDesktopPath, ProcedureName + ".xml")
+            //                , strContent, Encoding.Default);
+            //        form.Dispose();
+            //    }
+            //}
         }
 
 

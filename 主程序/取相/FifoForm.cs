@@ -24,6 +24,7 @@ namespace shikii.VisionJob
             BindLiveDeviceNames();
         }
       
+        //显示窗体
         private void ArrangeDspWnds()
         {
             
@@ -33,16 +34,17 @@ namespace shikii.VisionJob
             LiveDisplay(comboBox1.Text);
         }
 
+        // to do 
         public void AttachFifoTool()
         {
 
         }
-
+        // to do
         public void BindLiveDeviceNames()
         {
 
         }
-
+        // to do
         public void LiveDisplay(string str)
         {
 

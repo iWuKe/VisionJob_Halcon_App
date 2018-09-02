@@ -34,9 +34,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>shikii.VisionJob.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="halcondotnet">
       <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="shikii.dotNetLab.HalconLib">
+      <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\shikii.dotNetLab.HalconLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,15 +163,14 @@
     <EmbeddedResource Include="模板\PatternForm.resx">
       <DependentUpon>PatternForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="菜单\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="通讯\TCPNetConnectForm.resx">
       <DependentUpon>TCPNetConnectForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\New_Vision_App_Framework\HalconLib\HalconLib.csproj">
-      <Project>{4f2f67c5-6ee2-4867-a05e-9b988897b1d3}</Project>
-      <Name>HalconLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
       <Project>{1FBA2CBC-8701-471A-A78F-AEC1119A5962}</Project>
       <Name>AppCommon</Name>

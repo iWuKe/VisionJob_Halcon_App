@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using dotNetLab.Common;
 using dotNetLab.Vision.Halcon;
+using dotNetLab.Vision.Halcon.Tools;
+ 
+ 
 namespace shikii.VisionJob
 {
    public class App
     {
-       public static dotNetLab.Debug.CodeEngine codeEngine;
-      
-        public static Dictionary<String, HalconEnginePowerSuite> HalconEngineManager;
-        public static String HalconScriptTableName = "HalconScriptList";
-       [STAThread]
+
+        public static List<ToolBlockEditV2> ToolBlockEditSet; 
+        public static   JobTool job;
+        [STAThread]
        static void Main()
        {
-           HalconEngineManager = new Dictionary<string, HalconEnginePowerSuite>();
+            ToolBlockEditSet = new List<ToolBlockEditV2>();
            WinFormApp.BegineInvokeApp();
            MainForm frm = new MainForm() ;
            WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);

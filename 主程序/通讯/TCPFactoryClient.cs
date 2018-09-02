@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using dotNetLab.Common;
-namespace shikii.VisionJob.通讯
+namespace shikii.VisionJob 
 {
    public class TCPFactoryClient : TCPClient
     {
@@ -96,7 +96,17 @@ namespace shikii.VisionJob.通讯
             DecodeHexString(strContent);
             return Send_Mill(  byt_Arr);
         }
-        
-
+        public Type GetRouteMessageType()
+        {
+            return typeof(RouteMessageCallback);
+        }
+        public Type GetTCPBaseType()
+        {
+            return typeof(TCPBase);
+        }
+        public String GetIPByIndex(int nIndex)
+        {
+            return this.IP;
+        }
     }
 }

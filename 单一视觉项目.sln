@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "主程序", "主程序\主程序.csproj", "{51547E55-B658-4AB7-95C1-082D33A5F933}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3} = {4F2F67C5-6EE2-4867-A05E-9B988897B1D3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "测试用_控制台", "测试用_控制台\测试用_控制台.csproj", "{38DE9650-F978-4A99-BEBA-B6AC4103850D}"
 EndProject
@@ -20,6 +23,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "测试", "测试", "{3257FCE3-C191-43FE-9A72-E64F3AF4F34C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "视觉支持", "视觉支持", "{3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalconLib", "..\New_Vision_App_Framework\HalconLib\HalconLib.csproj", "{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +96,18 @@ Global
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962}.Release|x86.ActiveCfg = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Debug|x86.Build.0 = Debug|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.ActiveCfg = Release|Any CPU
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +118,7 @@ Global
 		{BC982388-B669-48CF-8F9A-A9DAC94BFFFD} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{203DBCC1-7FE8-489F-9204-0D01F6CA0A18} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
+		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3} = {3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89BA0D05-3169-4088-B23B-35358CA127D4}

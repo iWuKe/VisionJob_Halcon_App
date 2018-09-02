@@ -150,5 +150,21 @@ namespace shikii.VisionJob
 
             };
         }
+        public Type GetRouteMessageType()
+        {
+            return typeof(RouteMessageCallback);
+        }
+        public Type GetTCPBaseType()
+        {
+            return typeof(TCPBase);
+        }
+        public String GetIPByIndex(int nIndex)
+        {
+            return lstStrArr_ClientID[nIndex];
+        }
+        //public void SetMessageRouteEvent(Delegate routeDel)
+        //{
+        //    this.Route = (RouteMessageCallback)routeDel;
+        //}
     }
 }
