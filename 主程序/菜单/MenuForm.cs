@@ -45,30 +45,7 @@ namespace shikii.VisionJob
             cmbx_NewProjectBaseOnWhichProject.Items.AddRange(strArr);
             cmbx_NewProjectBaseOnWhichProject.Text = cmbx_CurrentProjectName.Text;
         }
-        protected override void prepareData()
-        {
-            base.prepareData();
-            CompactDB.GetAllTableNames();
-
-            List<String> lst = CompactDB.GetNameColumnValues(CompactDB.DefaultTable);
-            if (lst.Count == 0)
-            {
-                ConsolePipe.Error("上述为项目相关的记录不存在");
-            }
-            if (!lst.Contains("Current_Project"))
-            {
-                CompactDB.Write("Current_Project", "0");
-            }
-            if (!Directory.Exists("Projs"))
-            {
-                Directory.CreateDirectory("Projs");
-            }
-            if (!lst.Contains("AutoClearTime"))
-            {
-                CompactDB.Write("AutoClearTime", "3");
-            }
-
-        }
+      
         protected override void prepareAppearance()
         {
             base.prepareAppearance();
@@ -103,8 +80,10 @@ namespace shikii.VisionJob
             this.btn_DeleteProject.Click += (s, e) =>
             {
                 if (cmbx_DeleteProject.Text == cmbx_CurrentProjectName.Text)
-
+                {
                     dotNetLab.Tipper.Error = "不能删除当前正在运行的项目";
+                    return;
+                }
                 else
                 {
                     String[] arr = Directory.GetFiles(String.Format("Projs\\{0}", cmbx_DeleteProject.Text));
@@ -686,7 +665,7 @@ namespace shikii.VisionJob
             // MenuForm
             // 
             this.ClientSize = new System.Drawing.Size(600, 500);
-            this.ClipboardText = "App_Extension_Data_Table";
+            this.ClipboardText = "mobileTextBox4";
             this.Controls.Add(this.card2);
             this.Controls.Add(this.card1);
             this.Controls.Add(this.colorDecorator1);
@@ -702,9 +681,5 @@ namespace shikii.VisionJob
             this.ResumeLayout(false);
 
         }
-
-      
-        
-     
     }
 }

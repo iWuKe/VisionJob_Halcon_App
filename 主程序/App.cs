@@ -4,16 +4,14 @@ using System.IO;
 using System.Windows.Forms;
 using dotNetLab.Common;
 using dotNetLab.Vision.Halcon;
-using dotNetLab.Vision.Halcon.Tools;
- 
- 
+using dotNetLab.Vision.Halcon.Tools; 
 namespace shikii.VisionJob
 {
    public class App
     {
 
         public static List<ToolBlockEditV2> ToolBlockEditSet; 
-        public static   JobTool job;
+        public static JobTool job;
         [STAThread]
        static void Main()
        {
@@ -31,6 +29,7 @@ namespace shikii.VisionJob
         public static String OriginProjectPath = "Projs\\0";
         public static String CurrentProject = "Current_Project";
         public static String MainCompactDB = "shikii.db";
+        public static string AutoCleanTime = "AutoClearTime";
        
     }
 }

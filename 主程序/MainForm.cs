@@ -18,21 +18,24 @@ namespace shikii.VisionJob
     public partial class MainForm : dotNetLab.Common.ModernUI.PageBase
     {
         
-     public  TCPFactoryServer factoryServer;
-     public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;
+    // public  TCPFactoryServer factoryServer;
+     public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;  
+        public bool EnableAutoClean = false;
 
         protected override void prepareData()
         {
             base.prepareData();
-          
-           //to do 添加通讯支持
+            String str = CompactDB.FetchValue(App.AutoCleanTime);
+            if (str == null)
+                CompactDB.Write(App.AutoCleanTime, "0");
+            //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
-            
+
             //factoryServer.Boot();
 
             //factoryServer.Route = (nWhichClient, byts) =>
             //{
-             
+
             //};
 
         }
@@ -404,3 +407,34 @@ namespace shikii.VisionJob
         }
      
      */
+
+/*
+
+  cc:;
+        String str = CompactDB.FetchValue("EnableAutoClean");
+        if (str == null)
+        {
+            CompactDB.Write("EnableAutoClean", "0");
+            CompactDB.Write(App.AutoCleanTime, "0");
+            goto cc;
+        }
+        if (str == "1")
+            this.EnableAutoClean = true;
+        else
+            EnableAutoClean = false;
+
+        String autoCleanTime = CompactDB.FetchValue(App.AutoCleanTime);
+        int n = 0;
+        int.TryParse(autoCleanTime, out n);
+
+        if(EnableAutoClean && n >0)
+        {
+
+            System.Windows.Forms.Timer tmr = new System.Windows.Forms.Timer();
+            tmr.Tick += (sender, e) =>
+            {
+
+            };
+        }
+
+ */
