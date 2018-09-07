@@ -86,7 +86,7 @@ namespace shikii.VisionJob
             PrepareVision();
            
         }
-        // to do  准备视觉库（*.shikii）
+        //准备视觉库（*.shikii）
         public void PrepareVision()
         {
             //使用作业管理器
@@ -98,7 +98,7 @@ namespace shikii.VisionJob
            App.job.Deserialize();
 
 
-           //手动管理作业
+            //手动管理作业
             //// 得到当前的项目名（路径）
             // String strShikiiFileDirectory = CompactDB.FetchValue("Current_Project");
             //// 加载ToolBlock,得到EditV2
@@ -109,7 +109,7 @@ namespace shikii.VisionJob
             //// 传出数据库及输出信息类对象
             //  thisToolBlock.CompactDB.DBObject = CompactDB;
             // thisToolBlock.ConsolePipe.ConsolePipe = ConsolePipe;
-
+          
 
         }
         protected override void prepareEvents()
@@ -199,6 +199,15 @@ namespace shikii.VisionJob
         public void ClearLogWindow()
         {
             this.mobileListBox1.Items.Clear();
+        }
+        public Form ShowPage(Type type, bool isFixedForm = false)
+        {
+            Form form = null;
+            if (!isFixedForm)
+                form = AppManager.ShowPage(type);
+            else
+                form = AppManager.ShowPage(type);
+            return form;
         }
         #endregion
 

@@ -35,7 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="hdevenginedotnet">
+      <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\hdevenginedotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="shikii.dotNetLab.HalconLib">
+      <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\shikii.dotNetLab.HalconLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
