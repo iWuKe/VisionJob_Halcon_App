@@ -21,7 +21,7 @@ namespace shikii.VisionJob
     // public  TCPFactoryServer factoryServer;
      public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;  
         public bool EnableAutoClean = false;
-
+         
         protected override void prepareData()
         {
             base.prepareData();
@@ -92,11 +92,11 @@ namespace shikii.VisionJob
             //使用作业管理器
            App.job = new JobTool();
            App.job.DisplayWnds = DspWndLayoutManager.DisplayWnds;
+           
            App. job.mainFormInvoker.Host = this;
            App. job.CompactDB.Host = CompactDB;
            App. job.ConsolePipe.Host = ConsolePipe;
            App.job.Deserialize();
-
 
             //手动管理作业
             //// 得到当前的项目名（路径）
@@ -213,7 +213,21 @@ namespace shikii.VisionJob
 
         private void btn_More_Click(object sender, EventArgs e)
         {
-            AppManager.ShowFixedPage(typeof(MenuForm));
+            foreach (Form item in Application.OpenForms)
+            {
+                if (item is MenuForm)
+                {
+                    if (item.Owner != this)
+                        return;
+                    if (item.WindowState == FormWindowState.Minimized)
+                        item.WindowState = FormWindowState.Normal;
+                    item.BringToFront();
+                    return;
+                }
+            }
+            Form frm =  AppManager.ShowFixedPage(typeof(MenuForm));
+                frm.Owner = this;
+            
         }
         private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
         private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;

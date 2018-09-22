@@ -115,7 +115,20 @@ namespace shikii.VisionJob
         //to do 训练模板
         private void lnk_TrainPattern_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            foreach (Form item in Application.OpenForms)
+            {
+                if (item is PatternForm)
+                {
+                    if (item.Owner !=  this)
+                        return;
+                    if (item.WindowState == FormWindowState.Minimized)
+                        item.WindowState = FormWindowState.Normal;
+                    item.BringToFront();
+                    return;
+                }
+            }
             PatternForm frm = new PatternForm();
+            frm.Owner = this;
             frm.Text = "作业管理器";
             JobToolEditV2 editV2 = new JobToolEditV2();
             editV2.Subject = App.job;
