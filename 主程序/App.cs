@@ -17,9 +17,8 @@ namespace shikii.VisionJob
        {
             ToolBlockEditSet = new List<ToolBlockEditV2>();
            WinFormApp.BegineInvokeApp();
-        
            MainForm frm = new MainForm() ;
-           WinFormApp.EndInvokeApp(frm,frm.mobileListBox1);
+           WinFormApp.EndInvokeApp(frm,frm.PrepareVision,frm.mobileListBox1);
 
        }
        
@@ -30,6 +29,7 @@ namespace shikii.VisionJob
         public static String CurrentProject = "Current_Project";
         public static String MainCompactDB = "shikii.db";
         public static string AutoCleanTime = "AutoClearTime";
-       
+        public static String ApplyUserPriority = "ApplyUserPriority";
+
     }
 }

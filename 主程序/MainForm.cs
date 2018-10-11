@@ -28,6 +28,9 @@ namespace shikii.VisionJob
             String str = CompactDB.FetchValue(App.AutoCleanTime);
             if (str == null)
                 CompactDB.Write(App.AutoCleanTime, "0");
+            String ApplyUserPriority = CompactDB.FetchValue(App.ApplyUserPriority);
+            if(ApplyUserPriority == null)
+                CompactDB.Write(App.ApplyUserPriority, "0");
             //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
 
@@ -83,7 +86,7 @@ namespace shikii.VisionJob
                 //必须使用这个方法来最大化窗体
                 this.MaxWindow();
             };
-            PrepareVision();
+           // PrepareVision();
            
         }
         //准备视觉库（*.shikii）
@@ -134,6 +137,10 @@ namespace shikii.VisionJob
             if (e.KeyData == (Keys.Control | Keys.C))
             {
                 this.mobileListBox1.Items.Clear();
+            }
+            if (e.KeyData == (Keys.Control | Keys.J))
+            {
+                ShowJobWindow();
             }
         }
        
@@ -209,10 +216,34 @@ namespace shikii.VisionJob
                 form = AppManager.ShowPage(type);
             return form;
         }
+        public void ScriptToolDebug(ToolBlock tbk, MvToolBase sTool )
+        {
+
+        }
         #endregion
 
         private void btn_More_Click(object sender, EventArgs e)
         {
+            int n = 0;
+            try
+            {
+            String ApplyUserPriority = CompactDB.FetchValue(App.ApplyUserPriority);
+              n  = int.Parse(ApplyUserPriority);
+
+            }
+            catch (Exception ex)
+            {
+
+                Tipper.Error = "检测到你可能启用了权限管理,但是可能配置不正确！";    
+            }
+            if(n>0)
+            {
+                LogInForm logIn = new LogInForm();
+                logIn.ShowDialog();
+                if (!logIn.bCloseWindow)
+                    return;
+            }
+
             foreach (Form item in Application.OpenForms)
             {
                 if (item is MenuForm)
@@ -228,6 +259,25 @@ namespace shikii.VisionJob
             Form frm =  AppManager.ShowFixedPage(typeof(MenuForm));
                 frm.Owner = this;
             
+        }
+
+          void ShowJobWindow()
+        {
+            PatternForm frm = new PatternForm();
+            frm.Owner = this;
+            frm.Text = "作业管理器";
+            JobToolEditV2 editV2 = new JobToolEditV2();
+            editV2.Subject = App.job;
+            editV2.Dock = DockStyle.Fill;
+            frm.Size = new System.Drawing.Size(editV2.Width + 20, editV2.Height + 20);
+
+            frm.Controls.Add(editV2);
+            frm.FormClosed += (s, ex) =>
+            {
+
+                frm.Dispose();
+            };
+            frm.Show();
         }
         private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
         private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;
@@ -385,7 +435,10 @@ namespace shikii.VisionJob
             this.ResumeLayout(false);
 
         }
-    }
+
+
+       
+        }
 }
 
 /*

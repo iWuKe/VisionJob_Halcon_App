@@ -26,6 +26,11 @@ namespace shikii.VisionJob
         }
         void PrepareProjsUI()
         {
+            String ApplyUserPriority = CompactDB.FetchValue(App.ApplyUserPriority);
+            if (int.Parse(ApplyUserPriority) > 0)
+                cbx_ApplyPriority.Checked = true;
+            else
+                cbx_ApplyPriority.Checked = false;
             cmbx_CurrentProjectName.Items.Clear();
             cmbx_DeleteProject.Items.Clear();
             cmbx_NewProjectBaseOnWhichProject.Items.Clear();
@@ -167,6 +172,18 @@ namespace shikii.VisionJob
         {
             AppManager.ShowCompactDBEditor();
         }
+
+        private void cbx_ApplyPriority_Click(object sender, EventArgs e)
+        {
+            if (cbx_ApplyPriority.Checked)
+            {
+                CompactDB.Write(App.ApplyUserPriority, "1");
+            }
+            else
+            {
+                CompactDB.Write(App.ApplyUserPriority, "0");
+            }
+        }
         private dotNetLab.Widgets.Card card2;
         private LinkLabel lnk_TrainPattern;
         private dotNetLab.Widgets.TextBlock textBlock2;
@@ -188,6 +205,8 @@ namespace shikii.VisionJob
         private LinkLabel lnk_CommunicationConfig;
         private LinkLabel lnk_ManualRun;
         private LinkLabel lnk_UseDataCenter;
+        private Toggle cbx_ApplyPriority;
+        private Label label3;
         private dotNetLab.Widgets.ColorDecorator colorDecorator1;
         private void InitializeComponent()
         {
@@ -214,6 +233,8 @@ namespace shikii.VisionJob
             this.textBlock4 = new dotNetLab.Widgets.TextBlock();
             this.textBlock3 = new dotNetLab.Widgets.TextBlock();
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
+            this.cbx_ApplyPriority = new dotNetLab.Widgets.Toggle();
+            this.label3 = new System.Windows.Forms.Label();
             this.card2.SuspendLayout();
             this.card1.SuspendLayout();
             this.SuspendLayout();
@@ -271,6 +292,8 @@ namespace shikii.VisionJob
             this.card2.BackColor = System.Drawing.Color.Transparent;
             this.card2.BorderColor = System.Drawing.Color.Gray;
             this.card2.BorderThickness = 0;
+            this.card2.Controls.Add(this.label3);
+            this.card2.Controls.Add(this.cbx_ApplyPriority);
             this.card2.Controls.Add(this.lnk_UseDataCenter);
             this.card2.Controls.Add(this.lnk_ManualRun);
             this.card2.Controls.Add(this.label2);
@@ -675,6 +698,31 @@ namespace shikii.VisionJob
             this.textBlock1.Vertical = false;
             this.textBlock1.WhereReturn = ((byte)(0));
             // 
+            // cbx_ApplyPriority
+            // 
+            this.cbx_ApplyPriority.BackColor = System.Drawing.Color.Transparent;
+            this.cbx_ApplyPriority.BlockColor = System.Drawing.Color.DarkGray;
+            this.cbx_ApplyPriority.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbx_ApplyPriority.BottomColor = System.Drawing.Color.DodgerBlue;
+            this.cbx_ApplyPriority.Checked = false;
+            this.cbx_ApplyPriority.DataBindingInfo = null;
+            this.cbx_ApplyPriority.Location = new System.Drawing.Point(99, 192);
+            this.cbx_ApplyPriority.MainBindableProperty = "";
+            this.cbx_ApplyPriority.Name = "cbx_ApplyPriority";
+            this.cbx_ApplyPriority.Size = new System.Drawing.Size(45, 22);
+            this.cbx_ApplyPriority.TabIndex = 6;
+            this.cbx_ApplyPriority.UIElementBinders = null;
+            this.cbx_ApplyPriority.Click += new System.EventHandler(this.cbx_ApplyPriority_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "权限管理";
+            // 
             // MenuForm
             // 
             this.ClientSize = new System.Drawing.Size(600, 500);
@@ -694,5 +742,7 @@ namespace shikii.VisionJob
             this.ResumeLayout(false);
 
         }
+
+     
     }
 }
