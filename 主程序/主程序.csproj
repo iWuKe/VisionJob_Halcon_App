@@ -125,9 +125,6 @@
     <Compile Include="显示窗口布局\DspWndLayout.cs" />
     <Compile Include="通讯\TCPFactoryClient.cs" />
     <Compile Include="通讯\TCPFactoryServer.cs" />
-    <Compile Include="通讯\TCPNetConnectForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
@@ -166,9 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="菜单\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="通讯\TCPNetConnectForm.resx">
-      <DependentUpon>TCPNetConnectForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

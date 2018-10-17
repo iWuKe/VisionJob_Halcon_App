@@ -160,10 +160,7 @@ namespace shikii.VisionJob
             };
         }
 
-        private void lnk_CommunicationConfig_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AppManager.ShowPage(typeof(TCPNetConnectForm));
-        }
+      
         private void lnk_ManualRun_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AppManager.ShowPage(typeof(ManualForm));
@@ -202,7 +199,6 @@ namespace shikii.VisionJob
         private Label label1;
         private dotNetLab.Widgets.MobileTextBox mobileTextBox4;
         private LinkLabel lnk_RetriveLogs;
-        private LinkLabel lnk_CommunicationConfig;
         private LinkLabel lnk_ManualRun;
         private LinkLabel lnk_UseDataCenter;
         private Toggle cbx_ApplyPriority;
@@ -214,12 +210,13 @@ namespace shikii.VisionJob
             this.mobileTextBox4 = new dotNetLab.Widgets.MobileTextBox();
             this.colorDecorator1 = new dotNetLab.Widgets.ColorDecorator();
             this.card2 = new dotNetLab.Widgets.Card();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbx_ApplyPriority = new dotNetLab.Widgets.Toggle();
             this.lnk_UseDataCenter = new System.Windows.Forms.LinkLabel();
             this.lnk_ManualRun = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lnk_RetriveLogs = new System.Windows.Forms.LinkLabel();
-            this.lnk_CommunicationConfig = new System.Windows.Forms.LinkLabel();
             this.lnk_TrainPattern = new System.Windows.Forms.LinkLabel();
             this.textBlock2 = new dotNetLab.Widgets.TextBlock();
             this.card1 = new dotNetLab.Widgets.Card();
@@ -233,8 +230,6 @@ namespace shikii.VisionJob
             this.textBlock4 = new dotNetLab.Widgets.TextBlock();
             this.textBlock3 = new dotNetLab.Widgets.TextBlock();
             this.textBlock1 = new dotNetLab.Widgets.TextBlock();
-            this.cbx_ApplyPriority = new dotNetLab.Widgets.Toggle();
-            this.label3 = new System.Windows.Forms.Label();
             this.card2.SuspendLayout();
             this.card1.SuspendLayout();
             this.SuspendLayout();
@@ -300,7 +295,6 @@ namespace shikii.VisionJob
             this.card2.Controls.Add(this.label1);
             this.card2.Controls.Add(this.mobileTextBox4);
             this.card2.Controls.Add(this.lnk_RetriveLogs);
-            this.card2.Controls.Add(this.lnk_CommunicationConfig);
             this.card2.Controls.Add(this.lnk_TrainPattern);
             this.card2.Controls.Add(this.textBlock2);
             this.card2.CornerAlignment = dotNetLab.Widgets.Alignments.All;
@@ -322,6 +316,31 @@ namespace shikii.VisionJob
             this.card2.Text = "card1";
             this.card2.UIElementBinders = null;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "权限管理";
+            // 
+            // cbx_ApplyPriority
+            // 
+            this.cbx_ApplyPriority.BackColor = System.Drawing.Color.Transparent;
+            this.cbx_ApplyPriority.BlockColor = System.Drawing.Color.DarkGray;
+            this.cbx_ApplyPriority.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbx_ApplyPriority.BottomColor = System.Drawing.Color.DodgerBlue;
+            this.cbx_ApplyPriority.Checked = false;
+            this.cbx_ApplyPriority.DataBindingInfo = null;
+            this.cbx_ApplyPriority.Location = new System.Drawing.Point(99, 192);
+            this.cbx_ApplyPriority.MainBindableProperty = "";
+            this.cbx_ApplyPriority.Name = "cbx_ApplyPriority";
+            this.cbx_ApplyPriority.Size = new System.Drawing.Size(45, 22);
+            this.cbx_ApplyPriority.TabIndex = 6;
+            this.cbx_ApplyPriority.UIElementBinders = null;
+            this.cbx_ApplyPriority.Click += new System.EventHandler(this.cbx_ApplyPriority_Click);
+            // 
             // lnk_UseDataCenter
             // 
             this.lnk_UseDataCenter.AutoSize = true;
@@ -336,7 +355,7 @@ namespace shikii.VisionJob
             // lnk_ManualRun
             // 
             this.lnk_ManualRun.AutoSize = true;
-            this.lnk_ManualRun.Location = new System.Drawing.Point(73, 80);
+            this.lnk_ManualRun.Location = new System.Drawing.Point(73, 41);
             this.lnk_ManualRun.Name = "lnk_ManualRun";
             this.lnk_ManualRun.Size = new System.Drawing.Size(69, 20);
             this.lnk_ManualRun.TabIndex = 5;
@@ -372,17 +391,6 @@ namespace shikii.VisionJob
             this.lnk_RetriveLogs.TabStop = true;
             this.lnk_RetriveLogs.Text = "查询往期日志";
             this.lnk_RetriveLogs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_RetriveLogs_LinkClicked);
-            // 
-            // lnk_CommunicationConfig
-            // 
-            this.lnk_CommunicationConfig.AutoSize = true;
-            this.lnk_CommunicationConfig.Location = new System.Drawing.Point(73, 46);
-            this.lnk_CommunicationConfig.Name = "lnk_CommunicationConfig";
-            this.lnk_CommunicationConfig.Size = new System.Drawing.Size(69, 20);
-            this.lnk_CommunicationConfig.TabIndex = 1;
-            this.lnk_CommunicationConfig.TabStop = true;
-            this.lnk_CommunicationConfig.Text = "通讯配置";
-            this.lnk_CommunicationConfig.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnk_CommunicationConfig_LinkClicked);
             // 
             // lnk_TrainPattern
             // 
@@ -697,31 +705,6 @@ namespace shikii.VisionJob
             this.textBlock1.UnderLineThickness = 2F;
             this.textBlock1.Vertical = false;
             this.textBlock1.WhereReturn = ((byte)(0));
-            // 
-            // cbx_ApplyPriority
-            // 
-            this.cbx_ApplyPriority.BackColor = System.Drawing.Color.Transparent;
-            this.cbx_ApplyPriority.BlockColor = System.Drawing.Color.DarkGray;
-            this.cbx_ApplyPriority.BorderColor = System.Drawing.Color.DarkGray;
-            this.cbx_ApplyPriority.BottomColor = System.Drawing.Color.DodgerBlue;
-            this.cbx_ApplyPriority.Checked = false;
-            this.cbx_ApplyPriority.DataBindingInfo = null;
-            this.cbx_ApplyPriority.Location = new System.Drawing.Point(99, 192);
-            this.cbx_ApplyPriority.MainBindableProperty = "";
-            this.cbx_ApplyPriority.Name = "cbx_ApplyPriority";
-            this.cbx_ApplyPriority.Size = new System.Drawing.Size(45, 22);
-            this.cbx_ApplyPriority.TabIndex = 6;
-            this.cbx_ApplyPriority.UIElementBinders = null;
-            this.cbx_ApplyPriority.Click += new System.EventHandler(this.cbx_ApplyPriority_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "权限管理";
             // 
             // MenuForm
             // 
