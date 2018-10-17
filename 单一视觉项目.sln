@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "视觉支持", "视觉支�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalconLib", "..\New_Vision_App_Framework\HalconLib\HalconLib.csproj", "{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThisLabWPFApp", "ThisLabWPFApp\ThisLabWPFApp.csproj", "{8515E209-F20B-4329-8E1C-C85B6B08DDFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,18 @@ Global
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.Build.0 = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Debug|x86.Build.0 = Debug|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|x86.ActiveCfg = Release|Any CPU
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +133,7 @@ Global
 		{203DBCC1-7FE8-489F-9204-0D01F6CA0A18} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3} = {3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}
+		{8515E209-F20B-4329-8E1C-C85B6B08DDFF} = {3257FCE3-C191-43FE-9A72-E64F3AF4F34C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89BA0D05-3169-4088-B23B-35358CA127D4}

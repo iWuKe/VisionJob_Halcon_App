@@ -23,11 +23,11 @@ namespace shikii.Test.Wnd
         {
            
             Graphics g = e.Graphics;
-            e.Node.
+           // e.Node.
             //g.DrawImage(Image.FromFile("D:/icon.png"), e.Node.Bounds.X, e.Node.Bounds.Y,16,16);
             //e.Node.ContextMenuStrip = new ContextMenuStrip();
             //e.Node.ContextMenuStrip.Items.Add("jet");
-            g.DrawString(e.Node.Text, treeView1.Font, Brushes.Black,e.Node.Bounds.X + 16 , e.Node.Bounds.Y );
+            //g.DrawString(e.Node.Text, treeView1.Font, Brushes.Black,e.Node.Bounds.X + 16 , e.Node.Bounds.Y );
         }
 
         private void InitializeComponent()
@@ -70,7 +70,7 @@ namespace shikii.Test.Wnd
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Form1());
         }
     }
 }

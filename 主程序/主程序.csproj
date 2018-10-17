@@ -58,6 +58,10 @@
     <Compile Include="手动操作\ManualForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="脚本调试\GlobalScriptDebuger.cs" />
+    <Compile Include="脚本调试\PlcDebuger.cs" />
+    <Compile Include="脚本调试\ScriptToolDebuger.cs" />
+    <Compile Include="脚本调试\TCP_IP_Debuger.cs" />
     <Compile Include="菜单\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>

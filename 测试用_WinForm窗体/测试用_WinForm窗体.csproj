@@ -38,11 +38,27 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PvDotNet, Version=3.0.3.2546, Culture=neutral, PublicKeyToken=666697f16d0ae86b, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PvDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PvGUIDotNet, Version=3.1.10.3219, Culture=neutral, PublicKeyToken=666697f16d0ae86b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PvGUIDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

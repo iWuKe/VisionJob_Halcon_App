@@ -19,9 +19,9 @@ namespace shikii.VisionJob
     {
         
     // public  TCPFactoryServer factoryServer;
-     public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;  
+        public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;  
         public bool EnableAutoClean = false;
-         
+       
         protected override void prepareData()
         {
             base.prepareData();
@@ -95,10 +95,10 @@ namespace shikii.VisionJob
             //使用作业管理器
            App.job = new JobTool();
            App.job.DisplayWnds = DspWndLayoutManager.DisplayWnds;
-           
            App. job.mainFormInvoker.Host = this;
            App. job.CompactDB.Host = CompactDB;
            App. job.ConsolePipe.Host = ConsolePipe;
+           App.job.LogPipe.Host = this.LogPipe;
            App.job.Deserialize();
 
             //手动管理作业
@@ -216,7 +216,24 @@ namespace shikii.VisionJob
                 form = AppManager.ShowPage(type);
             return form;
         }
+
+
+        //调试脚本工具，每次只能调试一个脚本工具（正式部署时请将代码退回到脚本工具中）
         public void ScriptToolDebug(ToolBlock tbk, MvToolBase sTool )
+        {
+            ScriptToolDebuger debuger1 = new ScriptToolDebuger();
+            debuger1.Run(tbk, sTool);
+        }
+
+
+        //调试全局脚本,正式部署时请将代码退回到步骤全局脚本中
+        public void GlobalScriptDebug(ToolBlock tbk, bool isBeginRunTool)
+        {
+            
+            GlobaleScriptDebuger debuger1 = new GlobaleScriptDebuger();
+            debuger1.Run(tbk, isBeginRunTool);
+        }
+        public void GlobalScriptTool()
         {
 
         }
@@ -261,7 +278,7 @@ namespace shikii.VisionJob
             
         }
 
-          void ShowJobWindow()
+        void ShowJobWindow()
         {
             PatternForm frm = new PatternForm();
             frm.Owner = this;
