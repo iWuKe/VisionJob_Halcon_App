@@ -233,9 +233,11 @@ namespace shikii.VisionJob
             GlobaleScriptDebuger debuger1 = new GlobaleScriptDebuger();
             debuger1.Run(tbk, isBeginRunTool);
         }
-        public void GlobalScriptTool()
+        public void TCP_IP_Script_Debug(int nWhichClient, byte[] byts, TCPInvoker tcpInvoker, List<ToolBlock> ToolBlockSet
+            , UIConsoleInvoker ConsolePipe, Action<String, bool> ConmmunicationOutputs)
         {
-
+            TCP_IP_Debuger _Debuger = new TCP_IP_Debuger();
+            _Debuger.Run(nWhichClient, byts, tcpInvoker, ToolBlockSet, ConsolePipe, ConmmunicationOutputs);
         }
         #endregion
 
