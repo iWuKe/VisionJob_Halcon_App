@@ -31,6 +31,7 @@ namespace shikii.VisionJob
             String ApplyUserPriority = CompactDB.FetchValue(App.ApplyUserPriority);
             if(ApplyUserPriority == null)
                 CompactDB.Write(App.ApplyUserPriority, "0");
+            
             //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
 

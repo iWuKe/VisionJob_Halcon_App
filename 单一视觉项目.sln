@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "视觉支持", "视觉支�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalconLib", "..\New_Vision_App_Framework\HalconLib\HalconLib.csproj", "{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraTools", "..\..\完整视觉应用\相机工具\CameraTools\CameraTools.csproj", "{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,18 @@ Global
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3}.Release|x86.Build.0 = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
