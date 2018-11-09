@@ -166,13 +166,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\完整视觉应用\相机工具\CameraTools\CameraTools.csproj">
-      <Project>{c24e02fe-bd5a-4d98-9fe5-5afedb79983d}</Project>
-      <Name>CameraTools</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\New_Vision_App_Framework\HalconLib\HalconLib.csproj">
       <Project>{4f2f67c5-6ee2-4867-a05e-9b988897b1d3}</Project>
       <Name>HalconLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\New_Vision_App_Framework\相机工具\AVT_CameraTool\AVT_CameraTool.csproj">
+      <Project>{c24e02fe-bd5a-4d98-9fe5-5afedb79983d}</Project>
+      <Name>AVT_CameraTool</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
       <Project>{1FBA2CBC-8701-471A-A78F-AEC1119A5962}</Project>
