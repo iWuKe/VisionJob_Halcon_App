@@ -23,45 +23,45 @@ namespace shikii.VisionJob
         }
         public void Run(ToolBlock ThisToolBlock, MvToolBase tool)
         {
-            this.ThisToolBlock = ThisToolBlock;
-            GetThisScriptTool(tool);
-            //在下面添加你的逻辑代码
-            //在下面添加你的逻辑代码
-            BlobTool blobTool = GetToolByIndex<BlobTool>(2);
-            Funcs.SmallestRectangle2.Run(blobTool.SelectedRegions);
-            //	Display(tool.InputImage) ;
-            HObject hobj = Funcs.GenRectangle2.Run(Funcs.SmallestRectangle2.row1,
-                Funcs.SmallestRectangle2.column1,
-                Funcs.SmallestRectangle2.phi,
-                Funcs.SmallestRectangle2.row2,
-                Funcs.SmallestRectangle2.column2);
-            ThisScriptTool.Tag = new object[2] { Funcs.SmallestRectangle2.row2 * 2, Funcs.SmallestRectangle2.column2 * 2 };
-            double nWidth = Math.Round(Funcs.SmallestRectangle2.row2.D * 2, 2);
-            double nHeight = Math.Round(Funcs.SmallestRectangle2.column2.D * 2, 2);
+            //this.ThisToolBlock = ThisToolBlock;
+            //GetThisScriptTool(tool);
+            ////在下面添加你的逻辑代码
+            ////在下面添加你的逻辑代码
+            //BlobTool blobTool = GetToolByIndex<BlobTool>(2);
+            //Funcs.SmallestRectangle2.Run(blobTool.SelectedRegions);
+            ////	Display(tool.InputImage) ;
+            //HObject hobj = Funcs.GenRectangle2.Run(Funcs.SmallestRectangle2.row1,
+            //    Funcs.SmallestRectangle2.column1,
+            //    Funcs.SmallestRectangle2.phi,
+            //    Funcs.SmallestRectangle2.row2,
+            //    Funcs.SmallestRectangle2.column2);
+            //ThisScriptTool.Tag = new object[2] { Funcs.SmallestRectangle2.row2 * 2, Funcs.SmallestRectangle2.column2 * 2 };
+            //double nWidth = Math.Round(Funcs.SmallestRectangle2.row2.D * 2, 2);
+            //double nHeight = Math.Round(Funcs.SmallestRectangle2.column2.D * 2, 2);
 
-            //通过工具索引号得到相应的工具
-            DispMessage(String.Format("总长{0},总宽{1}", nWidth, nHeight), 46, 4);
+            ////通过工具索引号得到相应的工具
+            //DispMessage(String.Format("总长{0},总宽{1}", nWidth, nHeight), 46, 4);
 
-            Metrology2D LongMessure = GetToolByIndex<Metrology2D>(3);
-            Metrology2D ShortMessureWidth = GetToolByIndex<Metrology2D>(4);
-            Metrology2D ShortMessureHeight = GetToolByIndex<Metrology2D>(5);
+            //Metrology2D LongMessure = GetToolByIndex<Metrology2D>(3);
+            //Metrology2D ShortMessureWidth = GetToolByIndex<Metrology2D>(4);
+            //Metrology2D ShortMessureHeight = GetToolByIndex<Metrology2D>(5);
 
 
-            PMAlignTool pm = GetToolByIndex<PMAlignTool>(1);
+            //PMAlignTool pm = GetToolByIndex<PMAlignTool>(1);
 
-            double lf = GetDistancePP(LongMessure.Lines[0], 2); ;
+            //double lf = GetDistancePP(LongMessure.Lines[0], 2); ;
 
-            DispMessage(tool.image, lf.ToString(), pm.Centers[0].Y, pm.Centers[0].X);
+            //DispMessage(tool.image, lf.ToString(), pm.Centers[0].Y, pm.Centers[0].X);
 
-            lf = GetDistancePP(ShortMessureWidth.Lines[0], 2);
-            LimittedBoxTool lim_Width  = GetToolByIndex<LimittedBoxTool>(6);
-            LimittedBoxTool lim_Height = GetToolByIndex<LimittedBoxTool>(7);
+            //lf = GetDistancePP(ShortMessureWidth.Lines[0], 2);
+            //LimittedBoxTool lim_Width  = GetToolByIndex<LimittedBoxTool>(6);
+            //LimittedBoxTool lim_Height = GetToolByIndex<LimittedBoxTool>(7);
  
-                DispMessage(tool.image, lf.ToString(), lim_Width.CurrentCenterRow,  lim_Width.CurrentCenterCol);
+            //    DispMessage(tool.image, lf.ToString(), lim_Width.CurrentCenterRow,  lim_Width.CurrentCenterCol);
 
-            lf = GetDistancePP(ShortMessureHeight.Lines[0], 2);
+            //lf = GetDistancePP(ShortMessureHeight.Lines[0], 2);
 
-            DispMessage(tool.image, lf.ToString(), lim_Height.CurrentCenterRow,lim_Height.CurrentCenterCol + 50);
+            //DispMessage(tool.image, lf.ToString(), lim_Height.CurrentCenterRow,lim_Height.CurrentCenterCol + 50);
              
         }
 
@@ -126,6 +126,13 @@ namespace shikii.VisionJob
         {
             get { return ThisScriptTool.InternalPassed; }
             set { ThisScriptTool.InternalPassed = value; }
+        }
+        Object Outputs
+        {
+            set
+            {
+                ThisToolBlock.Outputs.Add(value);
+            }
         }
     }
 }

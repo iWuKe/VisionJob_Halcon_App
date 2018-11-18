@@ -120,6 +120,14 @@ namespace shikii.VisionJob
         {
             return typeof(RouteMessageCallback);
         }
+        public Type GetClientConnectEventType()
+        {
+            return typeof(ClientConnectedCallback);
+        }
+        public Type GetClientDisconnectEventType()
+        {
+            return typeof(ClientDisconnectedCallback);
+        }
         public Type GetTCPBaseType()
         {
             return typeof(TCPBase);
@@ -128,9 +136,6 @@ namespace shikii.VisionJob
         {
             return lstStrArr_ClientID[nIndex];
         }
-        //public void SetMessageRouteEvent(Delegate routeDel)
-        //{
-        //    this.Route = (RouteMessageCallback)routeDel;
-        //}
+         
     }
 }

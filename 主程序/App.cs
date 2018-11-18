@@ -19,7 +19,7 @@ namespace shikii.VisionJob
            WinFormApp.BegineInvokeApp();
            MainForm frm = new MainForm() ;
            WinFormApp.EndInvokeApp(frm,frm.PrepareVision,frm.mobileListBox1);
-
+           
        }
        
 
@@ -30,6 +30,7 @@ namespace shikii.VisionJob
         public static String MainCompactDB = "shikii.db";
         public static string AutoCleanTime = "AutoClearTime";
         public static String ApplyUserPriority = "ApplyUserPriority";
+        public static String HideMainForm = "HideMainForm";
 
     }
 }

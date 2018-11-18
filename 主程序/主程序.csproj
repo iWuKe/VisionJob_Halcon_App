@@ -37,6 +37,9 @@
   <PropertyGroup>
     <StartupObject>shikii.VisionJob.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rider.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="halcondotnet">
       <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\halcondotnet.dll</HintPath>
@@ -189,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rider.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

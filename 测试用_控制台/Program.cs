@@ -1,4 +1,7 @@
-﻿using Microsoft.CSharp;
+﻿using dotNetLab.Common;
+using dotNetLab.Common.Tool;
+using Microsoft.CSharp;
+using shikii.VisionJob;
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
@@ -6,6 +9,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace 测试用_控制台
 {
@@ -26,9 +31,90 @@ namespace 测试用_控制台
             //p.AddEntryPoint();
             //p.GenerateCSharpCode(outputFileName);
             //Console.ReadLine();
-            CSharpCodeProvider CSParser  = CodeDomProvider.CreateProvider("CSharp") as CSharpCodeProvider;
-            CodeCompileUnit compileUnit =   CSParser.Parse(new StreamReader(@"C:\Users\shikii\Desktop\Projects\New_Vision_App_Store\ThisLabWPFApp\App.xaml.cs"));
-            int j = 11;
+            //CSharpCodeProvider CSParser  = CodeDomProvider.CreateProvider("CSharp") as CSharpCodeProvider;
+            //CodeCompileUnit compileUnit =   CSParser.Parse(new StreamReader(@"C:\Users\shikii\Desktop\Projects\New_Vision_App_Store\ThisLabWPFApp\App.xaml.cs"));
+            //int j = 11;
+            //CommandLineBase cmd = new CommandLineBase();
+
+            //cmd.Start();
+            ////      cmd.Execute("help");//("\"C:\\Users\\shikii\\Desktop\\Projects\\Halcon's App\\主程序\\bin\\Debug\\Mdbg.exe\"");
+            ////  Console.WriteLine(cmd.GetResultString());
+            ////   cmd.Execute("time");
+            //// Console.WriteLine(cmd.GetResultString());
+            //// Console.WriteLine( CommandInvoker.ExecuteCMD("help"));
+            //String [] str = cmd.Execute("ver", 40);
+            //for (int i = 0; i < str.Length; i++)
+            //{
+            //    Console.WriteLine(str[i]);
+            //}
+            TCPFactoryServer srv = new TCPFactoryServer();
+            srv.IP = "127.0.0.1";
+            srv.Port = 8040;
+            srv.BufferSize = 1029;
+            srv.LoopGapTime = 200;
+            srv.Route = (nWhichClient, byts) =>
+            {
+
+            };
+            srv.Boot();
+            srv.ClientConnected += (nIndex) =>
+            {
+                new Thread(
+                     () =>
+                     {
+                         while (true)
+                         {
+                             Thread.Sleep(800);
+                             srv.Send_Mill(nIndex, new byte[] { 1 });
+                         }
+                     }
+            ).Start();
+                Console.ReadLine();
+
+            };
+        }
+
+     
+
+        void DebugIt()
+        {
+            DebugCommand debug = new DebugCommand();
+
+            debug.Start(@"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\NETFX 4.0 Tools\Mdbg.exe");
+            if (debug.Attach("6700", 500))
+            {
+                Console.WriteLine("succed !");
+
+            }
+            else
+                Console.WriteLine("Failed !");
+
+            while (true)
+            {
+
+                String str = Console.ReadLine();
+                if (str.ToLower().Equals("exit"))
+                    break;
+                else
+                {
+                    //debug.
+                }
+            }
+
+
+
+
+            if (debug.Detach(500))
+            {
+                Console.WriteLine("成功脱离");
+            }
+            else
+            {
+                Console.WriteLine("脱离失败");
+            }
+
+            debug.Dispose();
+            Console.ReadLine();
         }
         public void AddFields()
         {

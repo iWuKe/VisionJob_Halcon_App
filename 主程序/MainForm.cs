@@ -21,7 +21,11 @@ namespace shikii.VisionJob
     // public  TCPFactoryServer factoryServer;
         public  dotNetLab.Vision.DspWndLayout DspWndLayoutManager;  
         public bool EnableAutoClean = false;
-       
+
+
+ 
+
+
         protected override void prepareData()
         {
             base.prepareData();
@@ -31,7 +35,10 @@ namespace shikii.VisionJob
             String ApplyUserPriority = CompactDB.FetchValue(App.ApplyUserPriority);
             if(ApplyUserPriority == null)
                 CompactDB.Write(App.ApplyUserPriority, "0");
-            
+            String HideMainForm = CompactDB.FetchValue(App.HideMainForm);
+            if (HideMainForm == null)
+                CompactDB.Write(App.HideMainForm, "0");
+
             //to do 添加通讯支持
             //factoryServer = new TCPFactoryServer();
 
@@ -101,7 +108,7 @@ namespace shikii.VisionJob
            App. job.ConsolePipe.Host = ConsolePipe;
            App.job.LogPipe.Host = this.LogPipe;
            App.job.Deserialize();
-
+           
             //手动管理作业
             //// 得到当前的项目名（路径）
             // String strShikiiFileDirectory = CompactDB.FetchValue("Current_Project");
@@ -113,9 +120,41 @@ namespace shikii.VisionJob
             //// 传出数据库及输出信息类对象
             //  thisToolBlock.CompactDB.DBObject = CompactDB;
             // thisToolBlock.ConsolePipe.ConsolePipe = ConsolePipe;
-          
+
 
         }
+
+        public  Form  ShowQuickBuildForm()
+        {
+            String HideMainForm = CompactDB.FetchValue(App.HideMainForm);
+            if (HideMainForm == "1")
+            {
+
+                //PatternForm frm = new PatternForm();
+                //frm.Owner = this;
+                //frm.Text = "作业管理器";
+                //JobToolEditV2 editV2 = new JobToolEditV2();
+                //editV2.Subject = App.job;
+                //editV2.Dock = DockStyle.Fill;
+                //frm.Size = new System.Drawing.Size(editV2.Width + 20, editV2.Height + 20);
+
+                //frm.Controls.Add(editV2);
+
+                Form frm = AppManager.ShowFixedPage(typeof(MenuForm));
+              
+                
+                frm.FormClosed += (sender, e) =>
+                {
+                    this.Close();
+                };
+                return frm;
+            }
+            else
+            {
+                return this;
+            }
+        }
+
         protected override void prepareEvents()
         {
             base.prepareEvents();
@@ -281,7 +320,7 @@ namespace shikii.VisionJob
             
         }
 
-        void ShowJobWindow()
+        Form ShowJobWindow()
         {
             PatternForm frm = new PatternForm();
             frm.Owner = this;
@@ -298,6 +337,7 @@ namespace shikii.VisionJob
                 frm.Dispose();
             };
             frm.Show();
+            return frm;
         }
         private dotNetLab.Widgets.TextBlock lbl_OutputInfo;
         private dotNetLab.Widgets.Container.CanvasPanel canvasPanel1;

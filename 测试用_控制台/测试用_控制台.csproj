@@ -53,6 +53,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCPFactoryServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
+      <Project>{1fba2cbc-8701-471a-a78f-aec1119a5962}</Project>
+      <Name>AppCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shikii_New_App_Framework\数据中心\DBManager.csproj">
+      <Project>{203dbcc1-7fe8-489f-9204-0d01f6ca0a18}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
