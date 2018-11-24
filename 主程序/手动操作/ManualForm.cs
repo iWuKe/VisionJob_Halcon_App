@@ -26,11 +26,18 @@ namespace shikii.VisionJob
        {
             base.prepareCtrls();
             InitializeComponent();
+            cmbx_GongWei.Items.Clear();
+            foreach (var item in App.job.ToolBlockSet)
+            {
+                cmbx_GongWei.Items.Add(item.Name);
+            }
+
        }
        // To do 运行单一工位，需要预定义下拉列表中的数据
        private void btn_RunSingleGongWei_Click(object sender, EventArgs e)
        {
-
+        
+          //  App.job.ToolBlockSet[cmbx_GongWei.SelectedIndex].Run();
        }
        private void btn_UploadScript_Click(object sender, EventArgs e)
        {

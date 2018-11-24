@@ -21,7 +21,22 @@ namespace shikii.VisionJob
 
         }
 
+        public FactoryTCPServerInvoker ThisServer
+        {
+            get
+            {
+                return ThisTCPInvoker as FactoryTCPServerInvoker;
+            }
+        }
 
+
+        public FactoryTCPClientInvoker ThisClient
+        {
+            get
+            {
+                return ThisTCPInvoker as FactoryTCPClientInvoker;
+            }
+        }
         void BindingMainFormDisplayWndByIndex(ToolBlock tbk, int nIndex)
         {
             tbk.DisplayAdapter = (ThisTCPInvoker.ThisJobTool.DisplayWnds[nIndex] as MVDisplay).adapter;
