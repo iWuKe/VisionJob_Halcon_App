@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalconLib", "..\New_Vision_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVT_CameraTool", "..\New_Vision_App_Framework\相机工具\AVT_CameraTool\AVT_CameraTool.csproj", "{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basler_CameraTool", "..\New_Vision_App_Framework\相机工具\Basler_CameraTool\Basler_CameraTool.csproj", "{01C452E3-4A28-42DA-9546-7E87FC3675B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,18 @@ Global
 		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|x86.ActiveCfg = Release|Any CPU
 		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D}.Release|x86.Build.0 = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +148,7 @@ Global
 		{1FBA2CBC-8701-471A-A78F-AEC1119A5962} = {AE296762-E3CE-44BC-A4F7-8352036C3A62}
 		{4F2F67C5-6EE2-4867-A05E-9B988897B1D3} = {3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}
 		{C24E02FE-BD5A-4D98-9FE5-5AFEDB79983D} = {3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}
+		{01C452E3-4A28-42DA-9546-7E87FC3675B7} = {3B7BD175-F9D2-4B81-88A1-D5F690B88BBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89BA0D05-3169-4088-B23B-35358CA127D4}

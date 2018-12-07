@@ -1,5 +1,7 @@
-﻿using dotNetLab.Common;
+﻿using AVT.VmbAPINET;
+using dotNetLab.Common;
 using dotNetLab.Common.Tool;
+using dotNetLab.Vision.PLCs;
 using Microsoft.CSharp;
 using shikii.VisionJob;
 using System;
@@ -19,7 +21,7 @@ namespace 测试用_控制台
         CodeCompileUnit targetUnit;
         CodeTypeDeclaration targetClass;
         private const string outputFileName = "D:/SampleCode.cs";
-
+     public  static Camera thisCmr;
         static void Main(string[] args)
         {
             //Program p = new Program();
@@ -47,6 +49,47 @@ namespace 测试用_控制台
             //{
             //    Console.WriteLine(str[i]);
             //}
+            //TestCamera();
+            // TestVimExternalTrigger();
+
+            NormalPlc normalPlc = new NormalPlc();
+            normalPlc.BaudRate = 115200;
+            normalPlc.BufferSize = 512000;
+
+    }
+
+        static void TestVimExternalTrigger()
+        {
+            Vimba sys = new Vimba();// Create a VimbaSystem object. This will be our entry point for everything else
+            CameraCollection cameras;// A list of tracking handles of AVT::VmbAPINET::Camera objects
+            Frame ThisFrame;
+
+            sys.Startup();
+
+            thisCmr = sys.Cameras[0];
+            thisCmr.Open(VmbAccessModeType.VmbAccessModeFull);
+
+
+            thisCmr.StartContinuousImageAcquisition(1);
+            thisCmr.OnFrameReceived += ThisCmr_OnFrameReceived;
+            Console.ReadKey();
+        }
+
+        private static void ThisCmr_OnFrameReceived(Frame frame)
+        {
+
+            try
+            {
+                thisCmr.QueueFrame(frame);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        void TestCamera()
+        {
             TCPFactoryServer srv = new TCPFactoryServer();
             srv.IP = "127.0.0.1";
             srv.Port = 8040;
@@ -73,8 +116,6 @@ namespace 测试用_控制台
 
             };
         }
-
-     
 
         void DebugIt()
         {

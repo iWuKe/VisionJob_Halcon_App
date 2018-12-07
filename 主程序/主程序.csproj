@@ -177,6 +177,10 @@
       <Project>{c24e02fe-bd5a-4d98-9fe5-5afedb79983d}</Project>
       <Name>AVT_CameraTool</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\New_Vision_App_Framework\相机工具\Basler_CameraTool\Basler_CameraTool.csproj">
+      <Project>{01c452e3-4a28-42da-9546-7e87fc3675b7}</Project>
+      <Name>Basler_CameraTool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
       <Project>{1FBA2CBC-8701-471A-A78F-AEC1119A5962}</Project>
       <Name>AppCommon</Name>

@@ -34,6 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="halcondotnet">
       <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\halcondotnet.dll</HintPath>
@@ -41,14 +42,12 @@
     <Reference Include="hdevenginedotnet">
       <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\hdevenginedotnet.dll</HintPath>
     </Reference>
-    <Reference Include="shikii.dotNetLab.HalconLib">
-      <HintPath>..\..\New_Vision_App_Framework\HalconLib\bin\Debug\shikii.dotNetLab.HalconLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
+    <Reference Include="VimbaNET, Version=1.7.0.24184, Culture=neutral, PublicKeyToken=96b729f24f119b9a, processorArchitecture=x86" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -56,6 +55,10 @@
     <Compile Include="TCPFactoryServer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\New_Vision_App_Framework\HalconLib\HalconLib.csproj">
+      <Project>{4f2f67c5-6ee2-4867-a05e-9b988897b1d3}</Project>
+      <Name>HalconLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Shikii_New_App_Framework\应用基建\AppCommon.csproj">
       <Project>{1fba2cbc-8701-471a-a78f-aec1119a5962}</Project>
       <Name>AppCommon</Name>
@@ -64,6 +67,9 @@
       <Project>{203dbcc1-7fe8-489f-9204-0d01f6ca0a18}</Project>
       <Name>DBManager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

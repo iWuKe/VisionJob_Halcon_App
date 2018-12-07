@@ -141,18 +141,21 @@ namespace shikii.VisionJob
                 //frm.Controls.Add(editV2);
 
                 Form frm = AppManager.ShowFixedPage(typeof(MenuForm));
-              
-                
+
+
                 frm.FormClosed += (sender, e) =>
                 {
                     this.Close();
                 };
                 return frm;
             }
-            else
+
+            else if (HideMainForm == "2")
             {
-                return this;
+                return ShowJobWindow();
             }
+            else
+                return this;
         }
 
         protected override void prepareEvents()
@@ -290,7 +293,7 @@ namespace shikii.VisionJob
               n  = int.Parse(ApplyUserPriority);
 
             }
-            catch (Exception ex)
+            catch
             {
 
                 Tipper.Error = "检测到你可能启用了权限管理,但是可能配置不正确！";    

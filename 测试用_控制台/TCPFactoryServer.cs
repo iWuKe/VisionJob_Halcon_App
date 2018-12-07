@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using dotNetLab.Common;
-using dotNetLab.Vision.Halcon;
+
 
 namespace shikii.VisionJob 
 {
@@ -36,7 +36,7 @@ namespace shikii.VisionJob
             }
             catch (Exception)
             {
-                 Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";       
+                // Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";       
                 return false;
             }
 
@@ -56,7 +56,7 @@ namespace shikii.VisionJob
             {
 
 
-            Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";
+            //Tipper.Ask = "是否未连接到指定的客户端？\r\n建议重新启动本程序重试。";
 
                 return false;
             }
