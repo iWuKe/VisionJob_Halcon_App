@@ -8,3 +8,5 @@
 /.vs/单一视觉项目
 /主程序/obj/x86/Debug
 /主程序/bin/Debug
+obj
+/.vs
